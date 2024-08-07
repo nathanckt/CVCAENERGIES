@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>CVCA Energies</title>
+        <link href="../../assets/logo/hexa-couleurs.png" rel="icon" type="image/png">
+        <link href="../../assets/logo/hexa-couleurs.ico" rel="icon" type="image/x-icon">
+        <link href="../../style/header.css" rel="stylesheet">
+        <link href="../../style/main.css" rel="stylesheet">
+        <link href="../../style/footer.css" rel="stylesheet">
+        <link href="../../style/activites.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="../../index.html" class="nav-icon navbar__logo" aria-label="Visiter la page d'accueil" aria-current="page">
+                <img src="../../assets/logo-cvca/svg/titre-couleurs.svg" alt="Logo CVCA Energies">
+            </a>
+
+            <nav>
+                <button class="hamburger navbar__hamburger" type="button" aria-label="Bouton Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="navlinks-container navbar__nav">
+                    <li class="main-link nodrop  navbar__link--nodrop" aria-current="page"><a href="../../index.html">ACCUEIL</a></li>
+                    <li class="main-link dropdown">A PROPOS
+                        <ul class="dropdown-container" id="dropdown-propos">
+                            <li class="drop-link">
+                                <a href="../../pages/a-propos/histoire.html"><span>&#9654;</span> QUI SOMMES-NOUS ?</a>
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/a-propos/valeurs.html"><span>&#9654;</span> NOS VALEURS</a>
+
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/a-propos/implantations.html"><span>&#9654;</span> NOS IMPLANTATIONS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-link active dropdown">NOS COMPÉTENCES
+                        <ul class="dropdown-container" id="dropdown-metiers">
+                            <li class="drop-link">
+                                <a href="../../pages/competences/expertises.html" ><span>&#9654;</span> DOMAINES D'EXPERTISES</a>
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/competences/secteurs-activites.html"><span>&#9654;</span> SECTEURS D'ACTIVITÉS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-link nodrop"><a href="../../pages/carriere.html" >CARRIÈRES</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-button">
+                <a href="../../pages/contact.html" class="contact-icone" aria-label="Contactez-nous">
+                    <img src="../../assets/icone/contact-icone.png" alt="contact-icone">
+                </a>
+                <div class="contact-btn">
+                    <a class="cta-nav contact" href="../../pages/contact.html">CONTACT</a>
+                    <a class="cta-nav linkedin"href="https://www.linkedin.com/company/cvca-%C3%A9nergies" target="_blank">
+                        <img id="logo-linkedin" src="../../assets/icone/logo-linkedin.svg" alt="logo linkedin">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="hero">
+            <h1 class="hero__header">NOS SECTEURS D'ACTIVITÉS</h1>
+        </section>
+        <section class="secteurs">
+            <div class="swiper secteurs__swipper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" ><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/tertiaire_27b9e5ab7f.png" alt="Tertiaire"></div>
+                    <div class="swiper-slide" ><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/scolaire_369b311f78.png" alt="Scolaire"></div>
+                    <div class="swiper-slide"><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/ehpad_3275ca7ac3.png" alt="Ehpad/ Résidence Etudiante"></div>
+                    <div class="swiper-slide" ><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/hospitalier_582d7f4ca7.png" alt="Hospitalier"></div>
+                    <div class="swiper-slide" ><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/labo_248c7fda9c.png" alt="Laboratoire / Industrie"></div>
+                    <div class="swiper-slide" ><img class="secteurs__icone" src="../../my-strapi-project/public/uploads/hotel_5e159176c6.png" alt="Hôtellier"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="infos">
+
+        </section>
+        <section class="references">
+            <h2 class="references__title">Quelques <span class="references__title--red">Références</span></h2>
+            <div class="content references__content">
+            </div>
+            <div class="references__modal">
+                <div class="modal__overlay modal-trigger"></div>
+                <div class="modal__content">
+                    <p>Tds</p>
+                </div>
+            </div>
+        </section>
+        <section class="clients">
+            <h2 class="references__title">Ils nous font <span class="references__title--red">Confiance</span></h2>
+            <div class="swiper clients__swipper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide--client" ><img class="secteurs__icone" src="../../assets/activites/aventim.jpg" alt="Aventim"></div>
+                    <div class="swiper-slide swiper-slide--client" ><img class="secteurs__icone" src="../../assets/activites/logo_bouygues-batiment-nord-est.png" alt="Bouygues"></div>
+                    <div class="swiper-slide swiper-slide--client"><img class="secteurs__icone" src="../../assets/activites/projex.png" alt="Projex"></div>
+                    <div class="swiper-slide swiper-slide--client" ><img class="secteurs__icone" src="../../assets/activites/aventim.jpg" alt="Aventim"></div>
+                    <div class="swiper-slide swiper-slide--client" ><img class="secteurs__icone" src="../../assets/activites/logo_bouygues-batiment-nord-est.png" alt="Bouygues"></div>
+                    <div class="swiper-slide swiper-slide--client"><img class="secteurs__icone" src="../../assets/activites/projex.png" alt="Projex"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-top">
+                <div class="footer-horaires">
+                    <h3>Nos horaires</h3>
+                    <p>📅 Du Lundi au Vendredi :</p>
+                    <p>🕓 08h00-12h00 / 13h30-16h30</p>
+
+                </div>
+                <div class="footer-adresses">
+                    <h3>Nos adresses</h3>
+                    <a href="https://www.google.fr/maps/place/CVCA+%C3%A9nergies/@50.2799582,3.1012155,17z/data=!4m15!1m8!3m7!1s0x47c2b64c6bc9f833:0xc67c4d7bf64d12a2!2s4+Rue+Georges+Lefebvre,+59151+Arleux!3b1!8m2!3d50.2799548!4d3.1037904!16s%2Fg%2F11c43wmrp7!3m5!1s0x47c2b7e8e572c827:0x312e920ad38ac0fc!8m2!3d50.2799398!4d3.1039257!16s%2Fg%2F11ryq5jbnp?entry=ttu" target="_blank">📍 4 rue Georges Lefevbre, 59151 Arleux</a>
+                    <a href="https://www.google.fr/maps/place/27+Rue+Antoine+Watteau,+59430+Dunkerque/@51.0355473,2.3274204,15z/data=!3m1!4b1!4m10!1m2!2m1!1s27+Rue+Antoine+Watteau!3m6!1s0x47dc8b9c0f34ed71:0xea1b6428ffd75c8c!8m2!3d51.0355353!4d2.3458743!15sChYyNyBSdWUgQW50b2luZSBXYXR0ZWF1kgERY29tcG91bmRfYnVpbGRpbmfgAQA!16s%2Fg%2F11c4cf3n1x?entry=ttu" target="_blank">📍 27 rue Antoine Watteau, 59140 Dunkerque</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Nous contacter</h3>
+                    <a href="tel:+33327876723">☎️ 03.27.87.67.23</a>
+                    <a href="mailto:contact@cvca-energies.fr">📧 contact@cvca-energies.fr</a>
+                    <a id="footer-linkedin" href="#">🌐​ LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-infos">
+                    <p>@2024 - CVCA Energies</p>
+                    <div class="liens-mentions">
+                        <a href="../../pages/mentions/mentions-legales.html" class="link-footer"> Mentions légales</a>
+                        <span> / </span>
+                        <a href="../../pages/mentions/confidentialité.html" class="link-footer">Politique de confidentialité</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="../../script/activites.js"></script>
+    </body>
+</html>

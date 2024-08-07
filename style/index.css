@@ -1,0 +1,480 @@
+.content{
+    margin: 40px 100px;
+    width: 100%;
+}
+
+/* Héro Bar */
+.intro-content{
+    height: 100vh;
+    position: relative;
+    top:-40px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), rgba(255,255,255,1)), 
+                url("../assets/images/photos/cvca-005.jpg") no-repeat center center ;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.intro-texte{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 600px;
+}
+.intro-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.intro-logo img{
+    width: 400px ;
+    position: absolute;
+}
+
+#hexagon {
+    height: 450px; /* adjust to control the size  */
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0);
+    background: rgba(255,255,255,0.7);
+}
+
+.text-intro{
+    font-family: var(--title-font);
+    font-size: 2.66rem;
+    color: var(--white);
+    font-weight: 600;
+    font-style: italic;
+    width: 500px;
+    
+}
+
+.intro-cta{
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+/* Notre engagement */
+
+.engagement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.engagement__content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-left:auto;
+    width:100%;
+    margin-top: 30px;
+}
+
+.engagement__content .text {
+    width: 50%;
+}
+.engagement__content .text :nth-child(4){
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.engagement h2{
+    margin-left: auto;
+}
+
+.engagement p{
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.engagement img{
+    height : 500px;
+    width: 400px;
+    margin-left:20px;
+    object-fit: cover;
+    box-shadow: 2px 4px 4px 0px ;
+}
+
+/* Chiffres */
+.chiffres {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.chiffres .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.chiffres .content div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+h3{
+    font-size: var(--h2-red-font-size);
+    color: var(--cvca-red);
+}
+
+/* Activités */
+.activite .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10%;
+}
+
+.activite{
+    overflow: hidden;
+}
+
+.text-secteurs{
+    width: 30%;
+}
+
+.text-secteurs p{
+    position: relative;
+    left: 58px;
+    top: 10px;
+    width: 400px;
+}
+
+.hexa-secteurs{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container-hexa{
+    width:200px;
+    height: 200px;
+    padding: 5px;
+}
+
+.hexa-secteurs img{
+    height: 100%;
+}
+
+.hexa-secteurs div{
+    display: flex;
+}
+
+.top{
+    position: relative;
+    left:-105px;
+    top:30px;
+}
+
+.activite p{
+    font-size: 1.5rem;
+}
+
+.activite h2{
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container-hexa:hover{
+    padding: 0px;
+    width: 210px;
+    height: 210px;
+    
+}
+
+/* Références */
+.references{
+    padding: 40px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-domaine {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.references h2{
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+
+/* Actus */
+.actus {
+    margin: 40px 100px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px){
+    .intro-logo{
+        display: none;
+    }
+
+    .intro{
+        width: 100vw;
+    }
+
+    .intro-content{
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .intro-texte{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: fit-content;
+    }
+    
+    
+    .text-intro{
+        font-family: var(--title-font);
+        font-size: 1.66rem;
+        color: var(--white);
+        font-weight: 600;
+        font-style: italic;
+        width: 100%;
+        text-align: center;
+        
+    }
+    
+    .intro-cta{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .intro .cta{
+        font-size: 1.2rem;
+        width: 100% !important;
+        margin: 0px;
+        padding: 5px 25px;
+    }
+
+    .cta-gris{
+        background: var(--cvca-grey) !important;
+    }
+    
+    .intro-title{
+        font-size: 2.6rem;
+        margin-top: 80px;
+    }
+}
+
+
+/* TELEPHONE */
+@media (max-width: 500px){
+    /* ENGAGEMENT */
+    .engagement__content{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .engagement__content img{
+        order: 2;
+        width: 90%;
+        margin-left: 0px;
+        height: 300px;
+    }
+
+    .engagement__text{
+        order: 1;
+        width: 90% !important;
+    }
+
+    .engagement__text p{
+        padding-right: 0px;
+        padding: 0px 10px;
+    }
+
+    .engagement__content h2{
+        font-size: 2rem;
+    }
+
+    .engagement__content h2 span{
+        font-size: 2.6rem;
+        top: -15px;
+        left: 55px; 
+    }
+
+
+    /* CHIFFRES */
+
+    .chiffres .content{
+        margin: 20px 0px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        /* padding: 0px 30px; */
+    }
+
+    .chiffres h3{
+        margin: 0px;
+    }
+
+    .reverse__chiffres h3{
+        order:2 ;
+    }
+
+    .reverse__chiffres p{
+        order: 1;
+        text-align: end;
+    }
+
+    .reverse__chiffres{
+        display: flex;
+    }
+
+
+    /* SECTEURS */
+    .activite .content{
+        margin: 20px 0px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        /* padding: 0px 30px; */
+    }
+
+    .text-secteurs{
+        width: 90%;
+    }
+
+    .text-secteurs p{
+        position:static;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .activite{
+        width: 100%;
+    }
+
+    .activite h2{
+        font-size: 2rem;
+    }
+
+    .activite h2 span{
+        font-size: 2.6rem;
+        top: -15px;
+        left: 55px; 
+    }
+
+    .container-hexa{
+        height: 150px;
+        width: 150px;
+    }
+
+    .top{
+        position: static;
+    }
+    
+    .hexa-secteurs{
+        width: 100%;
+        display: flex;  
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .top{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+    }
+    .bottom{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        position: relative;
+        top: 50px;
+
+    }
+
+    .container-hexa:hover{
+        padding: 0px;
+        width: 160px;
+        height: 160px;
+    }   
+
+    .activite p{
+        text-align: justify;
+    }
+
+
+    /* REFERENCES */
+    .references h2{
+        font-size: 2rem;
+    }
+
+    .references h2 span{
+        font-size: 2.6rem;
+        top: -15px;
+        left: 55px; 
+    }
+
+    .references h1{
+        font-size: 2.5rem;
+    }
+
+    .references{
+        margin: 20px 0px;
+        padding: 0px 30px; 
+    }
+
+    .cta-domaine{
+        display: none;
+    }
+
+    .references p{
+        display: none;
+    }
+
+    /* ACTUS */
+    .actus h2{
+        font-size: 2rem;
+    }
+
+    .actus h2 span{
+        font-size: 2.6rem;
+        top: -15px;
+        left: 55px; 
+    }
+
+    .actus{
+        margin: 20px 0px;
+        margin-top: 50px;
+        padding: 0px 30px; 
+        display: none;
+    }
+
+    
+}

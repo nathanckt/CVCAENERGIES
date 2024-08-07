@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* Design System */
+:root{
+    /* Couleurs Principales*/
+    --cvca-red: #FF4A3C;
+    --cvca-grey: #615C5C;
+    --fond-grey: #f1f1f1;
+    --white: #ffffff;
+    
+    /* Config Textes */
+    --title-font: 'Inter' sans-serif;
+    --all-font: 'Open Sans'; 
+
+    --body-font-weigth: 400;
+    --body2-font-weigth: 400;
+    --h1-font-weigth: 800;
+    --h2-grey-font-weigth: 400;
+    --h2-red-font-weigth: 700;
+    --h3-font-weigth: 600;
+
+    --body-font-size: 1rem;
+    --body2-font-size: 1.33rem;
+    --h1-font-size: 4rem;
+    --h2-grey-font-size: 2.5rem;
+    --h2-red-font-size: 3.66rem;
+    --h3-font-size: 2.3rem;
+} 
+
+
+*,
+::before
+::after {
+    box-sizing: border-box;
+    margin:0 ;
+    padding: 0;
+}
+
+main{
+    margin: 0;
+    padding: 0;
+    top:0%;
+}
+
+body{
+    font-family: var(--all-font);
+    font-size: var(--body2-font-size);
+    color: var(--cvca-grey);
+    margin: 0;
+}
+
+h1{
+    color: var(--white);
+    font-size: var(--h1-font-size);
+    font-family: var(--title-font);
+    font-weight: var(--h1-font-weigth);
+    text-shadow: 5px 5px 10px var(--cvca-grey);
+}
+
+h2{
+    color:var(--cvca-grey);
+    font-size: var(--h2-grey-font-size);
+    font-family: var(--title-font);
+    font-weight: var(--h2-grey-font-weigth);
+    padding-bottom: 0px;
+    margin-top: 0;
+}
+
+h2 span{
+    color: var(--cvca-red);
+    position : relative;
+    font-size: var(--h2-red-font-size);
+    font-weight: var(--h2-red-font-weigth);
+    top: -25px;
+    left: 55px; 
+}
+
+a{
+    text-decoration: none;
+    color: #615c5c;
+}
+
+.cta{
+    background-color: var(--cvca-red);
+    width: fit-content;
+    min-width: 200px ;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--title-font);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 5px 25px;
+    border: none;
+}
+

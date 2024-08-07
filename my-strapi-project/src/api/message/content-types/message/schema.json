@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Prenom": {
+      "type": "string"
+    },
+    "Entreprise": {
+      "type": "string"
+    },
+    "Telephone": {
+      "type": "string"
+    },
+    "Mail": {
+      "type": "string"
+    },
+    "Message": {
+      "type": "text"
+    }
+  }
+}

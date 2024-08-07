@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reference",
+  "info": {
+    "singularName": "references",
+    "pluralName": "reference",
+    "displayName": "Référence",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NomChantier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "LocalisationChantier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "SousTitre": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "MontantChantier": {
+      "type": "biginteger"
+    },
+    "MaitreOuvrage": {
+      "type": "string"
+    },
+    "Architecte": {
+      "type": "string"
+    },
+    "BureauEtude": {
+      "type": "string"
+    },
+    "DateLivraison": {
+      "type": "date"
+    },
+    "DureeChantier": {
+      "type": "integer"
+    },
+    "expertise": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::expertise.expertise",
+      "mappedBy": "references"
+    },
+    "secteur": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::secteur.secteur",
+      "inversedBy": "references"
+    },
+    "ImagePrincipale": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ImagesSecondaires": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Baniere": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidatures",
+  "info": {
+    "singularName": "candidature",
+    "pluralName": "candidatures",
+    "displayName": "candidature"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "prenom": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "objet": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "cv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "motiv": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

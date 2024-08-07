@@ -1,0 +1,119 @@
+/* GENERAL */
+.content{
+    margin: 40px 150px;
+}
+
+
+
+/* HERO */
+.hero{
+    background-image: url("../assets/valeurs/hero.png"); 
+    /* TODO: changer l'image (pas assez quali) */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    overflow: hidden;
+}
+
+/* ENGAGEMENT */
+.engagement .content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.engagement__text{
+    width: 50%;
+}
+.engagement__image{
+    width: 35%;
+}
+.engagement__image img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.engagement__title--red{
+    top: 55px;
+    left: -65px;
+}
+
+.engagement__title{
+    margin-bottom: 90px;
+}
+
+
+/* VALEURS */
+
+.valeurs__title--red{
+    top: 55px;
+    left: -35px;
+}
+
+.valeurs__title{
+    margin-bottom: 90px;
+}
+
+.valeurs .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.valeurs__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.valeurs__text{
+    text-align: justify;
+    width: 100%;
+}
+
+/* TEMOIGNAGES */
+.temoignages__pp{
+    width: 40px;
+}
+
+.temoignages__title--red{
+    top: 55px;
+    left: -155px;
+}
+
+.temoignages__title{
+    margin-bottom: 90px;
+}
+/* swiper */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 30%; */
+  }
+
+  .swiper-slide img {
+    /* display: block; */
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+
+
+/* FOOTER */
+footer{
+    margin-top: 0;
+}

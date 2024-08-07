@@ -1,0 +1,207 @@
+.content{
+    margin: 40px 150px;
+}
+
+.content p{
+    text-align: justify;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: 
+                linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), /* Dégradé */
+                url("../assets/histoire/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+h2 span{
+    color: var(--cvca-red);
+    position : relative;
+    font-size: var(--h2-red-font-size);
+    font-weight: var(--h2-red-font-weigth);
+    top: 50px;
+    left: -50px; 
+}
+
+h2{
+    margin-bottom: 5rem;
+}
+
+.dates h2 span{
+    left: -120px;
+}
+
+.famille h2 span{
+    left: -120px;
+}
+
+/* DATES */
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 80%;
+}
+
+.slide-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-annee{
+    position:absolute;
+    font-size: 2.5rem;
+}
+
+.slide-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.slide-text h3{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.slide-text p{
+    text-align: center;
+}
+
+.swiper-button-next{
+    color:black !important; 
+}
+
+.swiper-button-prev{
+    color: black !important;
+}
+
+/* AU COEUR DE LA FAMILLE */
+.famille .content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.famille-video{
+    height: 80vh;
+}
+
+.famille-text{
+    justify-self: center;
+    align-self: center;
+}
+
+
+/* RESPONSIVE */
+
+
+/* TELEPHONE */
+@media (max-width: 500px){
+    /* HERO */
+    .hero h1{
+        font-size: 2rem;
+    }
+
+    .hero{
+        height: 30vh;
+    }
+
+
+    /* HISTOIRE */
+    .histoire{
+        width: 100vw;
+    }
+
+    .histoire .content{
+        margin: 0px 30px;
+    }
+
+    .histoire h2{
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+
+    .histoire h2 span{
+        font-size: 2.6rem;
+        top: 35px;
+        left: -55px; 
+    }
+
+    .histoire p{
+        font-size: 1.2rem;
+        margin-top: 50px;
+    }
+
+
+    /* DATES */
+    .dates{
+        width: 100vw;
+    }
+
+    .dates .content{
+        margin: 0px 30px;
+    }
+
+    .dates h2{
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+
+    .dates h2 span{
+        font-size: 2.6rem;
+        top: 35px;
+        left: -65px; 
+    }
+
+    .slide-annee{
+        font-size: 1rem;
+    }
+
+    /* FAMILLE */
+    .famille{
+        width: 100vw;
+    }
+
+    .famille .content{
+        margin: 0px 30px;
+    }
+
+    .famille h2{
+        font-size: 2rem;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        width: 105%;
+    }
+
+    .famille h2 span{
+        font-size: 2rem;
+        top: 35px;
+        left: -105px; 
+    }
+
+    .famille-video{
+        display: none;
+    }
+
+}

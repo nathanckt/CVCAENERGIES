@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>CVCA Energies</title>
+        <link href="../style/header.css" rel="stylesheet">
+        <link rel="stylesheet" href="../style/main.css">
+        <link rel="stylesheet" href="../style/footer.css">
+        <link href="../style/contact.css" rel="stylesheet">
+        <link href="../contenu/logo/hexa-couleurs.png" rel="icon" type="image/png">
+        <link href="../contenu/logo/hexa-couleurs.ico" rel="icon" type="image/x-icon">
+    </head>
+    <body>
+        <header class="navbar">
+            <a href="index.html" class="nav-icon" aria-label="Visiter la page d'accueil" aria-current="page">
+                <img src="../../assets/logo-cvca/svg/titre-couleurs.svg" alt="Logo CVCA Energies">
+            </a>
+
+            <nav>
+                <button class="hamburger" type="button" aria-label="Bouton Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="navlinks-container">
+                    <li class="main-link nodrop" aria-current="page"><a href="../../index.html">ACCUEIL</a></li>
+                    <li class="main-link dropdown">A PROPOS
+                        <ul class="dropdown-container" id="dropdown-propos">
+                            <li class="drop-link">
+                                <a href="../a-propos/histoire.html"><span>&#9654;</span> QUI SOMMES-NOUS ?</a>
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/a-propos/valeurs.html"><span>&#9654;</span> NOS VALEURS</a>
+
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/a-propos/implantations.html"><span>&#9654;</span> NOS IMPLANTATIONS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-link dropdown">NOS COMPÉTENCES
+                        <ul class="dropdown-container" id="dropdown-metiers">
+                            <li class="drop-link">
+                                <a href="../../pages/competences/expertises.html" ><span>&#9654;</span> DOMAINES D'EXPERTISES</a>
+                            </li>
+                            <li class="drop-link">
+                                <a href="../../pages/competences/secteurs-activites.html"><span>&#9654;</span> SECTEURS D'ACTIVITÉS</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-link nodrop "><a href="../../pages/carriere.html" >CARRIÈRES</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-button">
+                <a href="../../pages/contact.html" class="contact-icone" aria-label="Contactez-nous">
+                    <img src="../../assets/icone/contact-icone.png" alt="contact-icone">
+                </a>
+                <div class="contact-btn">
+                    <a class="cta-nav contact" href="../../pages/contact.html">CONTACT</a>
+                    <a class="cta-nav linkedin"href="https://www.linkedin.com/company/cvca-%C3%A9nergies" target="_blank">
+                        <img id="logo-linkedin" src="../../assets/icone/logo-linkedin.svg" alt="logo linkedin">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <h1 class="hero__header">CONTACT</h1>
+            </section>
+            <section class="direct">
+                <div class="content">
+                    <h2 class="direct__title">Envoyez <span class="direct__title--red">Message</span></h2>
+                    <form action="#" class="direct__form" id="contactForm" method="post">
+                        <div class="form__left">
+                            <div class="form__small">
+                                <div class="form__fied form__field--small">
+                                    <label for="name" class="form__label">Nom :</label><br>
+                                    <input type="text" id="name" name="name" required class="form__input"><br><br>
+                                </div>
+                                <div class="form__field form__field--small">
+                                    <label for="firstname" class="form__label">Prénom :</label><br>
+                                    <input type="text" id="firstname" name="firstname" required class="form__input"><br><br>
+                                </div>
+                            </div>
+                            <div class="form__small">
+                                <div class="form__field form__field--small">
+                                    <label for="entreprise" class="form__label">Entreprise :</label><br>
+                                    <input type="text" id="entreprise" name="entreprise" required class="form__input"><br><br>
+                                </div>
+                                <div class="form__field form__field--small">
+                                    <label for="tel" class="form__label">Téléphone :</label><br>
+                                    <input type="tel" id="tel" name="tel" required pattern="[0-9]{6,}" class="form__input"><br><br>
+                                </div>
+                            </div>
+                            <div class="form__field">
+                                <label for="mail" class="form__label">E-mail :</label><br>
+                                    <input type="email" id="mail" name="mail" required class="form__input"><br><br>
+                            </div>
+                            <div class="form__field">
+                                <div class="form-group">
+                                    <label for="message">Message :</label><br>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form__right">
+                            <img src="../assets/contact/poste-travail.jpg" alt="Chargé d'affaire sur son poste de travail">
+                            <div class="form__field">
+                                <label for="terms" class="form__label form__label--confid">
+                                    <input type="checkbox" id="terms" name="terms" class="form__checkbox" required>
+                                    J'ai lu et j'accepte la <a href="#" class="form__confid"> politique de confidentialité</a>
+                                </label>
+                            </div> 
+                            <button type="submit" class="cta form__submit">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="contact">
+                <div class="content">
+                    <h2 class="contact__title">Nos <span class="contact__title--red">Coordonnées</span></h2>
+                    <div class="contact__cards">
+                        <div class="contact__card contact__card--small">
+                            <img src="../assets/contact/gris.png" alt="" class="contact__design contact__design--grey">
+                            <h4>Téléphone</h4>
+                            <a href="tel:+33327876723">03.27.87.67.23</a>
+                            <img src="../assets/contact/rouge.png" alt="" class="contact__design contact__design--red">
+                        </div>
+                        <div class="contact__card">
+                            <img src="../assets/contact/gris.png" alt="" class="contact__design contact__design--grey">
+                            <h4>Adresse Mail</h4>
+                            <a href="mailto:contact@cvca-energies.fr">contact@cvca-energies.fr</a>
+                            <img src="../assets/contact/rouge.png" alt="" class="contact__design contact__design--red">
+                        </div>
+                        <div class="contact__card contact__card--small">
+                            <img src="../assets/contact/gris.png" alt="" class="contact__design contact__design--grey">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/company/cvca-%C3%A9nergies" target="_blank">Suivez-nous ici !</a>
+                            <img src="../assets/contact/rouge.png" alt="" class="contact__design contact__design--red">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="agences">
+                <div class="content">
+                    <h2 class="agences__title">Nos <span class="agences__title--red">Agences</span></h2>
+                    <div class="agences__map">
+                        <div class="agence">
+                            <h4 class="agences__subtitle">Agence Arleux</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2549.642161367158!2d3.101350776733798!3d50.27993977156017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2b7e8e572c827%3A0x312e920ad38ac0fc!2sCVCA%20%C3%A9nergies!5e0!3m2!1sfr!2sfr!4v1721113509421!5m2!1sfr!2sfr" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!-- <p class="agences__adresse">4 rue Georges Lefevbre, 59151 Arleux</p> -->
+                        </div>
+                        <div class="agence">
+                            <h4 class="agences__subtitle">Agence Dunkerque</h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408.12510177577934!2d2.345645977697769!3d51.03555492373637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dc8b9c0f34ed71%3A0xea1b6428ffd75c8c!2s27%20Rue%20Antoine%20Watteau%2C%2059430%20Dunkerque!5e0!3m2!1sfr!2sfr!4v1721113724517!5m2!1sfr!2sfr" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <!-- <p class="agences__adresse">27 rue Antoine Watteau <br> 59340 Dunkerque</p> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-top">
+                <div class="footer-horaires">
+                    <h3>Nos horaires</h3>
+                    <p>📅 Du Lundi au Vendredi :</p>
+                    <p>🕓 08h00-12h00 / 13h30-16h30</p>
+
+                </div>
+                <div class="footer-adresses">
+                    <h3>Nos adresses</h3>
+                    <a href="https://www.google.fr/maps/place/CVCA+%C3%A9nergies/@50.2799582,3.1012155,17z/data=!4m15!1m8!3m7!1s0x47c2b64c6bc9f833:0xc67c4d7bf64d12a2!2s4+Rue+Georges+Lefebvre,+59151+Arleux!3b1!8m2!3d50.2799548!4d3.1037904!16s%2Fg%2F11c43wmrp7!3m5!1s0x47c2b7e8e572c827:0x312e920ad38ac0fc!8m2!3d50.2799398!4d3.1039257!16s%2Fg%2F11ryq5jbnp?entry=ttu" target="_blank">📍 4 rue Georges Lefevbre, 59151 Arleux</a>
+                    <a href="https://www.google.fr/maps/place/27+Rue+Antoine+Watteau,+59430+Dunkerque/@51.0355473,2.3274204,15z/data=!3m1!4b1!4m10!1m2!2m1!1s27+Rue+Antoine+Watteau!3m6!1s0x47dc8b9c0f34ed71:0xea1b6428ffd75c8c!8m2!3d51.0355353!4d2.3458743!15sChYyNyBSdWUgQW50b2luZSBXYXR0ZWF1kgERY29tcG91bmRfYnVpbGRpbmfgAQA!16s%2Fg%2F11c4cf3n1x?entry=ttu" target="_blank">📍 27 rue Antoine Watteau, 59140 Dunkerque</a>
+                </div>
+                <div class="footer-contact">
+                    <h3>Nous contacter</h3>
+                    <a href="tel:+33327876723">☎️ 03.27.87.67.23</a>
+                    <a href="mailto:contact@cvca-energies.fr">📧 contact@cvca-energies.fr</a>
+                    <a id="footer-linkedin" href="#">🌐​ LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-infos">
+                <p>@2024 - CVCA Energies</p>
+                <div class="liens-mentions">
+                    <a href="pages/mentions/mentions-legales.html" class="link-footer"> Mentions légales</a>
+                    <span> / </span>
+                    <a href="pages/mentions/confidentialité.html" class="link-footer">Politique de confidentialité</a>
+                </div>
+            </div>
+        </footer>
+        <script src="../script/contact.js" ></script>
+    </body>
+</html>
