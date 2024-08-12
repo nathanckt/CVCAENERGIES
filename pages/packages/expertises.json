@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "attributes":{
+                "expertise": "Chauffage",
+                "titreExpertise": "Le Chauffage",
+                "paragraphe1": "Chez CVCA Energies, nous mettons notre expertise en chauffage au service de votre confort et de votre bien-être. Notre mission est de vous offrir des solutions de chauffage performantes, écologiques et adaptées à vos besoins spécifiques.",
+                "paragraphe2": "De la conception à la maintenance, en passant par l’installation et la mise en service. CVCA Energies propose une solution complète pour répondre à vos besoins.",
+                "titreSaviez": "Le saviez-vous ?",
+                "paragraphe3": "Les premières taces de système de chauffage remontent à l'Antiquité avec l'hypocauste, une installation produisant de la chaleur pour la faire circuler en sous-sol.",
+                "paragraphe4": "Aujourd'hui, le grand défi est de permettre aux Hommes de continuer de se chauffer en réduisant au maximum l'impact environmental.",
+                "srcImage1": "../../assets/expertises/chauffage/image1.png",
+                "srcImage2": "../../assets/expertises/chauffage/image2.png"
+            }
+        },
+        {
+            "id": 2,
+            "attributes":{
+                "expertise": "Climatisation",
+                "titreExpertise": "La Climatisation",
+                "paragraphe1": "CVCA Energies met à votre service ses compétences en climatisation pour réguler et contrôler les conditions climatiques de vos locaux.",
+                "paragraphe2": "Que ce soit pour des bureaux, des salles blanches ou des maisons de retraite, nous assurons le confort en adaptant la température, l’humidité et la qualité de l’air. Nos collaborateurs réalisent des bilans thermiques et conçoivent des solutions sur mesure avec les logiciels les plus avancés. ",
+                "titreSaviez": "Le saviez-vous ?",
+                "paragraphe3": "La climatisation est régulièrement preçue comme mauvaise pour la santé provoquant rhumes et allergies. C'est en réalité, tout l'inverse. La climatisation permet de brasser et assécher l'air, ce qui va à l'encontre du développement de particules allergènes comme la poussière, le pollen ou encore les acariens.",
+                "paragraphe4": "Il est revanche indispensable de l'entretenir régulièrement.",
+                "srcImage1": "../../assets/expertises/climatisation/image1.png",
+                "srcImage2": "../../assets/expertises/climatisation/image2.png"
+            }
+        },
+        {
+            "id": 3,
+            "attributes":{
+                "expertise": "Ventilation",
+                "titreExpertise": "La Ventilation",
+                "paragraphe1": "La qualité de l'air que vous respirez est essentielle pour votre santé et votre bien-être. Chez CVCA Energies, nous proposons des systèmes de ventilation avancés qui assurent une circulation d'air optimale dans votre espace. ",
+                "paragraphe2": "Nos solutions, allant de la planification à la mise en service, sont conçues pour améliorer la qualité de l'air intérieur, réduire les polluants et maintenir un environnement sain et confortable tout au long de l'année. ",
+                "titreSaviez": "Le saviez-vous ?",
+                "paragraphe3": "Des recherches menées par la Harvard T.H. Chan School of Public Health ont montré que des conditions de travail intérieur de qualité, y compris une bonne ventilation, peuvent améliorer la productivité des employés de 10 à 15 %.",
+                "paragraphe4": "",
+                "srcImage1": "../../assets/expertises/ventilation/image1.png",
+                "srcImage2": "../../assets/expertises/ventilation/image2.png"
+            }
+        }
+    ]
+}

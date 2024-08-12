@@ -1,0 +1,239 @@
+/* GENERAL */
+html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+.content{
+        margin: 40px 150px;
+}
+    
+/* HERO */
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(255,255,255,1)), 
+                url("../assets/activites/hero.jpg") no-repeat center center ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+
+/* DOMAINES */
+.swiper {
+    width: 90%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover; 
+    width: 100px;
+    height: 100px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+
+/* INFOS */
+
+/* .infos__btn{
+    margin-left: auto;
+    margin-top: 40px;
+} */
+
+
+.infos__content{
+    margin:80px 100px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.infos__image{
+    overflow: hidden;
+    width: 35%;
+}
+
+.infos__image--bottom{
+    width: 60%;
+}
+
+.infos__text{
+    font-size: 1.35rem;
+    width: 60%;
+}
+
+.infos__text h4{
+    font-size: 2rem;
+}
+
+.infos__text--bottom{
+    width: 35%;
+}
+
+.show{
+    display: flex;
+}
+
+/* REFERENCES */
+
+.references{
+    margin-bottom: 200px;
+}
+.references__title--red{
+    top: 50px;
+    left: -55px; 
+}
+
+.references__title{
+    margin-bottom: 90px;
+    margin-left: 150px;
+}
+
+.reference__title{
+    position: absolute;
+    top:0px;
+}
+
+.reference__image--principal{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.reference{
+    width:400px;
+    height: 600px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.reference__button {
+    position: absolute;
+    bottom: 40px;
+    cursor: pointer;
+}
+
+.references__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.references :nth-child(2){
+    top: 150px;
+}
+
+.references :nth-child(4){
+    top: 150px;
+}
+
+.references :nth-child(6){
+    top: 150px;
+}
+
+.reference__title{
+    color: white;
+    text-shadow: 5px 5px 10px var(--cvca-grey);
+    letter-spacing: 2px;
+}
+
+
+/* OFFERS MODAL */
+.references__modal{
+    position:fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+ }
+
+.references__modal.active{
+    display: block;
+ }
+
+ .modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #333333D3;
+ }
+
+
+ .modal__content{
+    width: 65%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    min-width: 300px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+ }
+
+ .modal__close{
+    padding: 10px 10px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    background: var(--cvca-red);
+    color: white;
+    align-self: flex-end;
+}
+
+.modal__image{
+    min-width: 35%;
+    padding: 20px 0px;
+}
+
+.modal__top{
+    display: flex;
+    flex-direction: row;
+    gap: 6%;
+}
+
+.modal__resume{
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.modal__send{
+    align-self: flex-end;
+}
+
+.modal__title{
+    color: var(--cvca-red);
+}
+
+
+
+/* CLIENTS */
+
+
+
+
