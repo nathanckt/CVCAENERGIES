@@ -88,6 +88,10 @@
 .temoignages__title{
     margin-bottom: 90px;
 }
+
+.temoignages{
+    display: none;
+}
 /* swiper */
 .swiper {
     width: 100%;
@@ -116,4 +120,110 @@
 /* FOOTER */
 footer{
     margin-top: 0;
+}
+
+
+/* RESPONSIVE */
+
+/* TELEPHONE */
+
+@media (max-width: 500px){
+    .content{
+        margin: 20px 0px;
+    }
+
+    /* HERO */
+    .hero{
+        width: 100vw;
+        height: 30vh;
+    }
+
+    .hero h1{
+        font-size: 2rem;
+    }
+
+    /* ENGAGEMENT */
+    .engagement{
+        width: 100vh;
+    }
+
+    .engagement__content{
+        padding: 0px 20px;
+        width: 90vw;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .engagement__image{
+        width: 100%;
+        order: 2;
+    }
+
+    .engagement__image img{
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .engagement__text{
+        order: 1;
+        width: 100%;
+    }
+
+    .engagement__title{
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .engagement__title--red{
+        font-size: 2.6rem;
+        top: -15px;
+        left: 45px;
+    }
+
+    .engagement__text p{
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+
+    /* VALEURS */
+    .valeurs{
+        width: 100vh;
+    }
+
+    .valeurs__content{
+        padding: 0px 20px;
+        width: 90vw;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .valeurs .container{
+        flex-direction: column;
+    }
+    .valeurs__title{
+        font-size: 2rem;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .valeurs__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+        left: -40px;
+    }
+
+    .valeurs__item{
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .valeurs__text{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .valeurs__item img{
+        width: 200px;
+    }
+
 }

@@ -224,6 +224,7 @@ h3{
 /* Actus */
 .actus {
     margin: 40px 100px;
+    display: none;
 }
 
 

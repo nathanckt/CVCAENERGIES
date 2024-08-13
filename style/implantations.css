@@ -73,3 +73,19 @@ h2{
 .arleux .first-image{
     order:1;
 }
+
+/* RESPONSIVE */
+
+/* TELEPHONE*/
+@media(max-width: 500px){
+    /* HERO */
+    .hero{
+        width: 100vw;
+        height: 30vh;
+    }
+
+    .hero h1{
+        font-size: 2rem;
+        padding-top: 20px;
+    }
+}
