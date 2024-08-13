@@ -80,7 +80,7 @@ async function showSecteurs(){
 
 
 async function showInfos(nom){
-    const reponse = await fetch("../packages/expertises.json");
+    const reponse = await fetch("../../packages/expertises.json");
     const expertises = await reponse.json();
 
     expertises.data.forEach(exper =>{

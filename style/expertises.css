@@ -52,7 +52,7 @@ html,
 
 
 .infos__content{
-    margin:80px 100px;
+    margin:40px 100px;
     left: 0;
     right: 0;
     display: flex;
@@ -62,6 +62,7 @@ html,
 
 .infos__image{
     overflow: hidden;
+    object-fit: cover;
     width: 35%;
 }
 
