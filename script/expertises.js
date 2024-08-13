@@ -83,6 +83,7 @@ async function showInfos(nom){
     const reponse = await fetch("../../packages/expertises.json");
     const expertises = await reponse.json();
 
+    console.log(nom);
     expertises.data.forEach(exper =>{
         if(exper.attributes.expertise === nom){
             createInfos(exper.attributes.titreExpertise, exper.attributes.paragraphe1, exper.attributes.paragraphe2, exper.attributes.titreSaviez, exper.attributes.paragraphe3, exper.attributes.paragraphe4, exper.attributes.srcImage1, exper.attributes.srcImage2);

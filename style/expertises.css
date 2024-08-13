@@ -87,6 +87,9 @@ html,
     display: flex;
 }
 
+.infos h4{
+    margin-top: 0px;
+}
 /* REFERENCES */
 
 .references{

@@ -47,8 +47,8 @@
             "attributes":{
                 "expertise": "Plomberie",
                 "titreExpertise": "La Plomberie",
-                "paragraphe1": "La maintenance régulière de vos systèmes de climatisation, de ventilation et de plomberie est cruciale pour leur performance et leur longévité. Chez CVCA Energies, nous offrons des services de maintenance complets et professionnels, adaptés à vos équipements. ",
-                "paragraphe2" : "Nos techniciens qualifiés veillent à ce que vos installations fonctionnent efficacement et sans interruption, vous offrant ainsi tranquillité d'esprit et économie d'énergie.",
+                "paragraphe1": "Chez CVCA Energies, nous comprenons l'importance d'un système de plomberie fiable pour le bon fonctionnement de vos installations. Qu'il s'agisse d'une intervention sur un réseau existant ou d'une nouvelle installation, nos experts s'engagent à vous fournir des solutions durables et efficaces.",
+                "paragraphe2" : "Nos services couvrent l'intégralité de vos besoins en plomberie et en pose d'équipements sanitaires. Nous nous fournissons chez des entreprises partenaires de qualité afin de garantir la qualité et la longévité de vos installations.",
                 "titreSaviez": "Le saviez-vous ?",
                 "paragraphe3": "Les chasses d'eau sans réservoir, aussi appelées chasses d'eau directes, sont une innovation intéressante dans le monde de la plomberie. La chasse relié directement à un réseau sous pression propose de nombreux avantages.",
                 "paragraphe4": "L'absence de réservoir, permet un gain d'espace mais aussi une maitenance réduite (moins de pièces mobiles), une réduction du risque de fuite et une économie d'eau.",
@@ -57,7 +57,7 @@
             }
         },
         {
-            "id": 4 ,
+            "id": 5 ,
             "attributes":{
                 "expertise": "Maintenance",
                 "titreExpertise": "La Maintenance",
@@ -65,9 +65,23 @@
                 "paragraphe2" : "Nos techniciens qualifiés veillent à ce que vos installations fonctionnent efficacement et sans interruption, vous offrant ainsi tranquillité d'esprit et économie d'énergie. Grâce à nos astreintes, nous pouvons aussi intervenir tout les jours en cas d'urgence sur un chantier en contrat avec nous.",
                 "titreSaviez": "Le saviez-vous ?",
                 "paragraphe3": " Une climatisation mal entretenue dans un immeuble de bureaux peut entraîner une surconsommation d'énergie de 5 à 20 %, augmentant ainsi les coûts opérationnels. De plus, 90 % des pannes des systèmes de CVC (Chauffage, Ventilation, Climatisation) sont dues à un manque de maintenance régulière.",
-                "paragraphe4": "Enfin, réparer les fuites d'eau mineures dans les systèmes de plomberie peut économiser des milliers de litres d'eau chaque année, tout en réduisant les risques de dommages structurels.",
-                "srcImage1": "../../assets/expertises/plomberie/image1.jpg",
-                "srcImage2": "../../assets/expertises/plomberie/image2.jpg"
+                "paragraphe4": "Enfin, réparer les fuites d'eau mineures de plomberie peut économiser des milliers de litres d'eau chaque années.",
+                "srcImage1": "../../assets/expertises/maintenance/image1.jpg",
+                "srcImage2": "../../assets/expertises/maintenance/image2.png"
+            }
+        },
+        {
+            "id": 6 ,
+            "attributes":{
+                "expertise": "GTB / GTC",
+                "titreExpertise": "La GTB/GTC",
+                "paragraphe1": "Optimisez la gestion de vos installations avec les solutions de GTB/GTC proposées par CVCA Energies. Nos systèmes intelligents vous permettent de contrôler et de superviser l'ensemble de vos équipements techniques, tels que le chauffage, la climatisation, la ventilation, et bien plus encore.",
+                "paragraphe2" : "Grâce à nos outils de gestion avancés, vous pouvez suivre en temps réel la performance énergétique de votre bâtiment, anticiper les besoins de maintenance, et réaliser des économies significatives. CVCA Energies vous accompagne dans la conception, l'installation et la maintenance de systèmes GTB/GTC sur mesure, pour une gestion optimisée de votre environnement.",
+                "titreSaviez": "Le saviez-vous ?",
+                "paragraphe3": "La Gestion Technique de Bâtiment (GTB) et la Gestion Technique Centralisée (GTC) centralisent la gestion des systèmes techniques d’un bâtiment, comme le chauffage et la climatisation.",
+                "paragraphe4": "La GTB optimise le confort et réduit la consommation énergétique, tandis que la GTC, utilisée pour des systèmes spécifiques, permet un contrôle à distance et prolonge la durée de vie des équipements pour une gestion efficace et durable.",
+                "srcImage1": "../../assets/expertises/gtbgtc/image1.jpeg",
+                "srcImage2": "../../assets/expertises/gtbgtc/image2.jpg"
             }
         }
     ]
