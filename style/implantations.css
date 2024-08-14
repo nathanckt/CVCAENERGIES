@@ -82,10 +82,64 @@ h2{
     .hero{
         width: 100vw;
         height: 30vh;
+        position: static;
+        margin-bottom: 30px;
     }
 
     .hero h1{
-        font-size: 2rem;
-        padding-top: 20px;
+        font-size: 2.3rem;
     }
+
+    /* CARTE */
+
+    .carte{
+        display: none;
+    }
+
+    /* AGENCES */
+    .agence h2{
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .agence h2 span{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    .content .top{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .first-image{
+        display: none;
+    }
+
+    .content{
+        padding: 0px 20px;
+        width: 90vw;
+        margin: 0px;
+    }
+
+    .text{
+        width: 100%;
+    }
+
+    .galerie-images{
+        flex-wrap: wrap;
+    }
+
+    .galerie-images img{
+        width: 42.5vw;
+    }
+
+    .responsive__top{
+        width: 90vw !important;
+        height: 200px !important;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
 }

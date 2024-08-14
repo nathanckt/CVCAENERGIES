@@ -200,3 +200,99 @@ textarea{
 .agences__adresse{
     text-align: center;
 }
+
+/* RESPONSIVE */
+
+/* TELEPHONE */
+@media(max-width: 500px){
+    .content{
+        margin: 0px 5%;
+        width: 90vw;
+    }
+    /* HERO */
+    .hero{
+        height: 30vh;
+    }
+
+    .hero__header{
+        font-size: 2.8rem;
+    }
+
+    /* MESSAGE */
+    .direct__title{
+        font-size: 2.3rem;
+    }
+
+    .direct__title--red{
+        font-size: 2.6rem;
+        top: 35px
+    }
+
+    .direct__form{
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .form__left{
+        width: 90%;
+    }
+
+    .form__right img{
+        display: none;
+    }
+
+    .form__right{
+        width: 100%;
+    }
+
+    .form__label--confid{
+        font-size: 1rem;
+    }
+
+    .direct{
+        margin-bottom: 80px;
+    }
+
+    /* COORDONNEES */
+    .contact__title{
+        font-size: 2.3rem;
+    }
+
+    .contact__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    .contact__cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact__card{
+        width: 70vw;
+    }
+
+    /* AGENCES */
+    .agences__title{
+        font-size: 2.3rem;
+    }
+
+    .agences__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    .agences__map{
+        flex-direction: column;
+        gap: 60px;
+        margin: 0px;
+    }
+
+    .agence{
+        width: 90vw;
+    }
+
+    .agence iframe{
+        width: 100%;
+    }
+}

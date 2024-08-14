@@ -341,3 +341,84 @@ small{
 .form__input--blocked{
     background-color: #ddd;
 }
+
+
+/* RESPONSIVE */
+
+/* TELEPHONE */
+@media(max-width: 500px){
+    /* HERO */
+    .hero{
+        height: 30vh;
+    }
+
+    .hero__header{
+        font-size: 2.6rem;
+    }
+
+    /* JOIN */
+
+    .content{
+        margin: 0px 20px;
+        margin-top: 20px;
+    }
+
+    .content__text{
+        width: 100%;
+    }
+
+    .join__design{
+        display: none;
+    }
+
+    .join__title{
+        font-size: 2rem;
+    }
+
+    .join__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    /* OFFRES */
+    .offers__title{
+        font-size: 2rem;
+    }
+
+    .offers__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    /* A terminer */
+
+    /* APPLY */
+    .apply__title{
+        font-size: 2rem;
+    }
+
+    .apply__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    .apply__form{
+        flex-direction: column;
+    }
+
+    .form__left{
+        width: 90%;
+    }
+
+    .form__left label{
+        font-size: 1.2rem;
+    }
+
+    .form__right{
+        width: 100%;
+    }
+
+    .form__left label{
+        font-size: 1.2rem;
+    }
+}
