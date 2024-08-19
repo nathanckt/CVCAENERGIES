@@ -303,3 +303,51 @@ nav {
     }
 
 }
+
+@media (min-width: 901px) and (max-width: 1300px){
+    .main-link{
+        font-size: 1.1rem !important;
+    }
+
+    nav{
+        margin: 0px 5%;
+        width: 60%;
+    }
+
+    .nav-icon{
+        height: 50px; 
+    }
+
+    .nav-icon img{
+        height: 100%;
+    }
+
+    .cta-nav {
+        font-size: 1.1rem;
+    }
+    
+    .cta-nav.linkedin {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .cta-nav.cta-nav.linkedin img {
+        width: 45px;
+    }
+    
+    .cta-nav.contact {
+        width: 120px;
+        height: 45px;
+    }
+
+    .navbar{
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 925px){
+    .main-link{
+        font-size: 1rem !important;
+    }
+}
+
