@@ -47,7 +47,8 @@ var swiper = new Swiper(".clients__swipper", {
 });
 
 async function showSecteurs(){
-    const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    const reponse = await fetch("../packages/references.json");
     const secteurs = await reponse.json();
 
     const swiper = document.querySelector(".swiper-wrapper");

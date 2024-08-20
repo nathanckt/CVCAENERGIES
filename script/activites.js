@@ -48,7 +48,8 @@ var swiper = new Swiper(".clients__swipper", {
 });
 
 async function showSecteurs(){
-    const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    const reponse = await fetch("../../packages/secteurs.json");
     const secteurs = await reponse.json();
 
     const swiper = document.querySelector(".swiper-wrapper");
@@ -81,7 +82,8 @@ showSecteurs();
 
 
 async function showInfos(nom){
-    const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    const reponse = await fetch("../../packages/secteurs.json");
     const secteurs = await reponse.json();
 
     secteurs.data.forEach(secteur => {
@@ -139,7 +141,8 @@ function getNom(){
 const contentRef = document.querySelector(".references__content");
 
 async function showReferences(secteurTheorique){
-    const reponse = await fetch("http://localhost:1337/api/reference?populate=*");
+    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    const reponse = await fetch("../../packages/references.json");
     const references = await reponse.json();
     let counter = 0;
 

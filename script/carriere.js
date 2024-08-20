@@ -5,7 +5,8 @@ const cards = document.querySelector(".offers__cards");
 // Fonctionne pour afficher les différentes offres
 async function createCard(){
     // Récupération des données 
-    const reponse = await fetch("http://localhost:1337/api/offres?populate=*");
+    // const reponse = await fetch("http://localhost:1337/api/offres?populate=*");
+    const reponse = await fetch("../packages/offres.json");
     const offers = await reponse.json();
 
     offers.data.forEach(job => {
