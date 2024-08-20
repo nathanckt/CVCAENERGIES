@@ -593,3 +593,189 @@ h3{
 
 /* TABLETTE */
 
+@media (min-width: 1300px) and (max-width: 1660px){
+    .intro-title{
+        font-size: 4rem;
+    }
+
+    .text-intro{
+        font-size: 3rem;
+    }
+
+    .intro-cta a{
+        font-size: 1.3rem;
+    }
+
+    .cta{
+        height: 60px !important;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1300px){
+    .intro-title{
+        font-size: 3.5rem;
+        width: 450px;
+        margin-top: 80px;
+    }
+
+    .text-intro{
+        font-size: 2.5rem;
+        width: 450px;
+    }
+
+    .intro-cta a{
+        font-size: 1rem;
+    }
+
+    .cta{
+        height: 40px !important;
+    }
+
+    .intro-logo img{
+        width: 350px ;
+    }
+    
+    #hexagon {
+        height: 380px; /* adjust to control the size  */
+    }
+    
+    .container-hexa{
+        width: 150px;
+        height: 150px;
+        padding: 5px;
+    }
+    
+    .container-hexa:hover{
+        padding: 0px;
+        width: 210px;
+        height: 210px;  
+    }
+
+    .top{
+        left: -80px;
+    }
+
+
+
+}
+
+
+@media (min-width: 900px) and (max-width: 1100px){
+
+    h2{
+        font-size: 2rem !important;
+    }
+
+    h2 span{
+        font-size: 2.8rem !important;
+        top: -15px !important;
+    }
+
+    .engagement__text p{
+        font-size: 1.2rem;
+    }
+
+    .container-hexa{
+        width: 130px;
+        height: 130px;
+        padding: 5px;
+    }
+    
+    .container-hexa:hover{
+        padding: 0px;
+        width: 210px;
+        height: 210px;  
+    }
+
+    .top{
+        left: -70px;
+    }
+
+    .text-secteurs p {
+        font-size: 1.2rem;
+        width: 300px;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 600px){
+     .chiffres h3{
+        font-size: 2.2rem;
+     }
+
+     .chiffres p{
+        font-size: 1.2rem ;
+     }
+     .chiffres .content{
+        margin: 40px 20px;
+        gap: 10%;
+     }
+}
+
+@media (min-width: 500px) and (max-width: 900px){
+    .engagement__content{
+        flex-direction: column;
+        width: 90vw;
+        justify-content: center;
+        margin: 0px 5vw;
+    }
+
+    .engagement__text{
+        order: 1;
+        width: 85vw !important;
+    }
+
+    .engagement__text p{
+        padding-right: 0px;
+    }
+
+    .engagement__content img{
+        order: 2;
+        margin-top: 40px;
+        margin-left: 0px ;
+        height: 4 00px;
+        width: 80vw
+    }
+
+    .chiffres .content{
+        flex-wrap: wrap;
+        gap: 12%;
+        margin: 40px 70px;
+    }
+
+    .activite .content{
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 90vw;
+        margin: 40px 40px;
+    }
+
+    .text-secteurs{
+        width: 100%;
+    }
+
+    .text-secteurs p {
+        display: none;
+    }
+
+    .container-hexa{
+        width: 23vw;
+        height: 23vw;
+        padding: 5px;
+    }
+    
+    .container-hexa:hover{
+        padding: 0px;
+        width: 24vw;
+        height: 24vw;  
+    }
+
+    .top{
+        left: -100px;
+    }
+
+    .bottom{
+        left: -2500px;
+    }
+
+}
