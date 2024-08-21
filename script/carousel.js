@@ -68,13 +68,13 @@ var IndexReferences = new Swiper('.mySwiper', {
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      640: {
+      0: {
         slidesPerView: 1,
       },
-      768: {
+      500: {
         slidesPerView: 2,
       },
-      1024: {
+      750: {
         slidesPerView: 3,
       },
     },

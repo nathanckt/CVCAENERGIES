@@ -175,7 +175,11 @@ h2{
     }
 
     .slide-annee{
-        font-size: 1rem;
+        font-size: 2.3rem;
+    }
+
+    .dates h2{
+        margin-top: 40px;
     }
 
     /* FAMILLE */
@@ -204,4 +208,50 @@ h2{
         display: none;
     }
 
+}
+
+
+/* AUTRES */
+
+@media (min-width: 500px) and (max-width:750px){
+    h1{
+        font-size: 2.9rem;
+    }
+
+    h2{
+        font-size: 2.2rem;
+    }
+
+    h2 span{
+        font-size: 2.8rem;
+        top: 35px;
+    }
+
+    .slide-annee{
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1000px){
+    .content{
+        margin: 40px 50px;
+    }
+
+    .swiper-button-next{
+        display: none !important;
+    }
+
+    .swiper-button-prev{
+        display: none !important;
+    }
+
+    .dates-swiper{
+        width: 80%;
+    }
+}
+
+@media (min-width: 1400px){
+    .slide-annee{
+        font-size: 3rem;
+    }
 }

@@ -70,6 +70,10 @@
     width: 30%;
 }
 
+.valeurs__item img{
+    width: 90%;
+}
+
 .valeurs__text{
     text-align: justify;
     width: 100%;
@@ -144,7 +148,7 @@ footer{
 
     /* ENGAGEMENT */
     .engagement{
-        width: 100vh;
+        width: 100vw;
     }
 
     .engagement__content{
@@ -187,7 +191,7 @@ footer{
 
     /* VALEURS */
     .valeurs{
-        width: 100vh;
+        width: 100vw;
     }
 
     .valeurs__content{
@@ -227,3 +231,122 @@ footer{
     }
 
 }
+
+@media (min-width: 1500px){
+    .content{
+        margin: 40px 10vw
+    }
+
+    .engagement__image{
+        width: 400px;
+    }
+
+    .engagement__text p {
+        font-size: 1.5rem;
+    }
+
+    .engagement__text{
+        width: 50vw;
+    }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1350px){
+    .engagement__title--red{
+        top: 35px;
+        left: -55px;
+        font-size: 2.8rem;
+    }
+
+    .engagement__title{
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+
+    .valeurs__title--red{
+        top: 35px;
+        left: -45px;
+        font-size: 2.8rem;
+    }
+
+    .valeurs__title{
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+
+    .engagement__image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content{
+        margin: 40px 7vw;
+    }
+
+    .engagement__text{
+        width: 50vw;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 1000px){
+    .engagement__title--red{
+        top: 35px;
+        left: -55px;
+        font-size: 2.8rem;
+    }
+
+    .engagement__title{
+        font-size: 2.3rem;
+        margin-bottom: 60px;
+    }
+
+    .valeurs__title--red{
+        top: 35px;
+        left: -45px;
+        font-size: 2.8rem;
+    }
+
+    .valeurs__title{
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+    }
+
+    .engagement__text{
+        order: 1;
+        width: 100%;
+    }
+
+    .engagement__image{
+        order: 2;
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .engagement__image img{
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .engagement__content{
+        flex-direction: column;
+    }
+
+    .content{
+        margin: 40px 10vw;
+    }
+
+
+    .valeurs .container{
+        flex-direction: column;
+    }
+
+    .valeurs__item{
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
+
