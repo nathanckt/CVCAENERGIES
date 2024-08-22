@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 4.5,
         loop: true,
         loopedSlides: 4,
+        breakpoints: {
+            0: {
+              slidesPerView: 2.5,
+            },
+            750: {
+              slidesPerView: 4.5,
+            },
+          },
         coverflowEffect: {
           rotate: 20,
           stretch: 0,
@@ -26,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
         //  },
     });
     swiper.on('transitionEnd', function(){
-        console.log(swiper.slides[swiper.activeIndex].querySelector(".secteurs__icone").alt);
         showInfos(swiper.slides[swiper.activeIndex].querySelector(".secteurs__icone").alt);
         showReferences(swiper.slides[swiper.activeIndex].querySelector(".secteurs__icone").alt);
     })
@@ -47,9 +54,12 @@ var swiper = new Swiper(".clients__swipper", {
       },
 });
 
+
+
+// L'objectif de cette fonction est de pouvoir modifier les icones depuis Strapi
+// Pour le moment elle n'est pas en fonctionnement 
 async function showSecteurs(){
-    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
-    const reponse = await fetch("../../packages/secteurs.json");
+    const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
     const secteurs = await reponse.json();
 
     const swiper = document.querySelector(".swiper-wrapper");
@@ -73,30 +83,25 @@ async function showSecteurs(){
     
             slide.appendChild(icone);
             swiper.appendChild(slide);
-            // TODO : Doubler le nombre de slides pour éviter les bugs 
         })
     }
 }
 
-showSecteurs();
 
 
+// Cette fonction récupère le texte de chaque secteur sur Strapi pour l'afficher 
 async function showInfos(nom){
-    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
-    const reponse = await fetch("../../packages/secteurs.json");
+    const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
     const secteurs = await reponse.json();
 
     secteurs.data.forEach(secteur => {
         if (secteur.attributes.NomSecteur === nom){
             createInfos(secteur.attributes.Description);
         }
-        else {
-            
-        }
     });
 }
 
-
+// Cette fonction manipule le DOM pour afficher les infos des secteurs
 function createInfos(descriptionSecteurs){
     const infos = document.querySelector(".infos");
     infos.innerHTML = "";
@@ -108,9 +113,10 @@ function createInfos(descriptionSecteurs){
     text.className = "infos__text";
     text.innerText = descriptionSecteurs;
 
-    const button = document.createElement("button");
+    const button = document.createElement("a");
     button.classList.add("infos__btn");
     button.classList.add("cta");
+    button.href = "../contact.html";
     button.textContent = "Contactez-nous !";
 
     content.appendChild(text);
@@ -118,10 +124,9 @@ function createInfos(descriptionSecteurs){
     infos.appendChild(content);
 }
 
+// Cette fonctionne récupère le nom du secteur actuellement au centre du carousel
 function getNom(){
         const active = document.querySelector(".swiper-slide-active");
-        console.log(active);
-        console.log("test");
         if (active) {
             const icone = active.querySelector(".secteurs__icone");
             if (icone) {
@@ -140,9 +145,9 @@ function getNom(){
 // REFERENCES
 const contentRef = document.querySelector(".references__content");
 
+// Cette fonction gère l'affichage des réfèrences et de leurs popups associés
 async function showReferences(secteurTheorique){
-    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
-    const reponse = await fetch("../../packages/references.json");
+    const reponse = await fetch("http://localhost:1337/api/references?populate=*"); // CHANGER CLOUD
     const references = await reponse.json();
     let counter = 0;
 
@@ -153,19 +158,22 @@ async function showReferences(secteurTheorique){
         const secteur = reference.attributes.secteur.data.attributes.NomSecteur;
         if (secteur === secteurTheorique){
             let nomChantier = reference.attributes.NomChantier;
-            let urlImagePrincipal = "../../my-strapi-project/public" + reference.attributes.ImagePrincipale.data.attributes.url;
+            let urlImagePrincipal = "../../my-strapi-project/public" + reference.attributes.Premiere.data.attributes.url; // CHANGER CLOUD
 
             createRef(nomChantier,urlImagePrincipal,counter);
             ouverturePopUp();
+            fermeturePopUp();
         }
     })
 }
 
+
+// Cette fonction manipule le DOM pour afficher une référence sur la page 
 function createRef(nom,url,count){
     const divRef = document.createElement("div");
     divRef.className = "reference";
 
-    const titleRef = document.createElement("h3");
+    const titleRef = document.createElement("h3"); 
     titleRef.className = "reference__title";
     titleRef.innerText = nom;
 
@@ -189,22 +197,23 @@ function createRef(nom,url,count){
 
 // POPUP REFERENCES
 
+// Cette fonction crée le contenu du PopUp selon la référence demandée 
 async function createModal(nomChantier){
     const modalContent = document.querySelector(".modal__content");
-
-    const reponse = await fetch("http://localhost:1337/api/reference?populate=*");
+    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
     const references = await reponse.json();
 
     for (let reference of references.data) {
-        console.log("test");
         const referenceData = reference.attributes;
-        if (referenceData.NomOffre === nomChantier) {
+        if (referenceData.NomChantier === nomChantier) {
             const hero = document.createElement("div");
+
+            // Hero 
             hero.className = "modal__hero";
 
             const chantier = document.createElement("h2");
             chantier.className = "modal__title";
-            chantier.textContent = nomChantier & "-" & reference.attributes.LocalisationChantier;
+            chantier.textContent = nomChantier + " - " + reference.attributes.LocalisationChantier;
             hero.appendChild(chantier);
 
             const sousTitre = document.createElement("h2");
@@ -212,18 +221,31 @@ async function createModal(nomChantier){
             sousTitre.textContent = reference.attributes.SousTitre;
             hero.appendChild(sousTitre);
             
+            const lot = document.createElement("h2");
+            lot.className = "modal__lot";
+            lot.textContent = reference.attributes.Lot;
+            hero.appendChild(lot);
+
             const baniere = document.createElement("img");
             baniere.className = "modal__baniere";
-            baniere.textContent = "../../my-strapi-project/public" + reference.attributes.Baniere.data.attributes.url;
+            baniere.src = "../../my-strapi-project/public" + reference.attributes.Baniere.data.attributes.url; // CHANGER CLOUD
             hero.appendChild(baniere);
 
             modalContent.appendChild(hero);
             
+
+            // DESCRIPTION
+            const titreDescript = document.createElement("h4");
+            titreDescript.className = "modal__info--title";
+            titreDescript.textContent = "Objet du marché : ";
+            modalContent.appendChild(titreDescript); 
+
             const descript = document.createElement("p");
             descript.className = "modal__descript";
-            descript.textContent = reference.attributes.Description;
+            descript.innerHTML = reference.attributes.Description;
             modalContent.appendChild(descript);
 
+            // INFOS
             const infos = document.createElement("div");
             infos.className = "modal__infos";
 
@@ -232,61 +254,101 @@ async function createModal(nomChantier){
             
             const infosD = document.createElement("div");
             infosD.className = "modal__infos--droite";
+            
+            const titreMontant = document.createElement("h4");
+            titreMontant.className = "modal__info--title";
+            titreMontant.textContent = "Montant du projet : " ;
+            infosD.appendChild(titreMontant);
 
             const montant = document.createElement("p");
             montant.className = "modal__info";
-            montant.textContent = "Montant du projet : " & reference.attributes.MontantChantier;
+            montant.textContent = reference.attributes.MontantChantier;
             infosD.appendChild(montant);
-
+            
+            const titreMaitre = document.createElement("h4");
+            titreMaitre.className = "modal__info--title";
+            titreMaitre.textContent = "Maître d'ouvrage : ";
+            infosG.appendChild(titreMaitre); 
+            
             const maitre = document.createElement("p");
             maitre.className = "modal__info";
-            maitre.textContent = "Maître d'ouvrage : " & reference.attributes.MaitreOuvrage;
+            maitre.textContent = reference.attributes.MaitreOuvrage;
             infosG.appendChild(maitre); 
-
+            
+            const titreArchi = document.createElement("h4");
+            titreArchi.className = "modal__info--title";
+            titreArchi.textContent = "Architecte : ";
+            infosG.appendChild(titreArchi); 
+            
             const archi = document.createElement("p");
             archi.className = "modal__info";
-            archi.textContent = "Architecte : " & reference.attributes.Architecte;
+            archi.textContent = reference.attributes.Architecte;
             infosG.appendChild(archi);
+            
+            const titreEtude = document.createElement("h4");
+            titreEtude.className = "modal__info--title";
+            titreEtude.textContent = "Bureau d'Etudes : ";
+            infosG.appendChild(titreEtude); 
             
             const etude = document.createElement("p");
             etude.className = "modal__info";
-            etude.textContent = "Bureau d'Etudes : " & reference.attributes.BureauEtude;
+            etude.textContent = reference.attributes.BureauEtude;
             infosG.appendChild(etude);
+            
+            const titreDate = document.createElement("h4");
+            titreDate.className = "modal__info--title";
+            titreDate.textContent = "Date de Livraison : ";
+            infosD.appendChild(titreDate); 
             
             const date = document.createElement("p");
             date.className = "modal__info";
-            date.textContent = "Date de livraison : " & reference.attributes.DateLivraison;
+            date.textContent = reference.attributes.DateLivraison;
             infosD.appendChild(date);
             
+            const titreDuree = document.createElement("h4");
+            titreDuree.className = "modal__info--title";
+            titreDuree.textContent = "Durée de l'intervention : ";
+            infosD.appendChild(titreDuree); 
+
             const duree = document.createElement("p");
             duree.className = "modal__info";
-            duree.textContent = "Intervention CVCA Energies : " & reference.attributes.DureeChantier;
+            duree.textContent = reference.attributes.DureeChantier;
             infosD.appendChild(duree);
 
             infos.appendChild(infosG);
             infos.appendChild(infosD);
-
+            
             const imageContent = document.createElement("div");
             imageContent.className = "modal__images";
-            reference.attributes.ImagesSecondaires.forEach(image =>{
+            reference.attributes.Photos.data.forEach(image =>{
                 const img = document.createElement("img");
                 img.className = "modal__image";
-                img.url = "../../my-strapi-project/public" + image.data.attributes.url;
+                img.src = "../../my-strapi-project/public" + image.attributes.url;
                 imageContent.appendChild(img);
             })
             
             modalContent.appendChild(infos);
+            
+            const titreMissions = document.createElement("h4");
+            titreMissions.className = "modal__info--title";
+            titreMissions.textContent = "Missions CVCA Energies : ";
+            modalContent.appendChild(titreMissions); 
+
+            const missions = document.createElement("p");
+            missions.className = "modal__info--mission";
+            missions.innerHTML = reference.attributes.MissionsCVCA;
+            modalContent.appendChild(missions);
             modalContent.appendChild(imageContent);
             break;
         }
     }
 }
 
+// Cette fonctionne gère l'ouverture du PopUp
 function ouverturePopUp(){
     const modal = document.querySelector(".references__modal"); 
     
     const modalTriggersEntry = document.querySelectorAll(".modal-trigger-entry"); 
-    console.log(modalTriggersEntry);
     
     modalTriggersEntry.forEach(trigger => {
         trigger.addEventListener("click", () => {
@@ -294,24 +356,33 @@ function ouverturePopUp(){
             const nomChantier = reference.querySelector(".reference__title").textContent.trim();
             modal.classList.add("active");
 
-            // Jusqu'à ça c'est good
+            const hexa = document.querySelector(".secteurs");
+            hexa.classList.add("hidden");
+
             createModal(nomChantier);
         });
     });
 }
 
+
+// Cette fonction ferme le PopUp quand on clique à côté
 function fermeturePopUp(){
     const modalTriggersExit = document.querySelectorAll(".modal-trigger"); 
+    const modal = document.querySelector(".references__modal");
 
     modalTriggersExit.forEach(trigger => {
         trigger.addEventListener("click", () => {
-            modal.classList.toggle("active");
+            modal.classList.remove("active");
             deleteModal();
         });
     });
 }
 
+
+// Cette fonction supprime le contenu du PopUp une fois fermé
 function deleteModal(){
+    const hexa = document.querySelector(".secteurs");
+    hexa.classList.remove("hidden");
     const modalContent = document.querySelector(".modal__content");
     modalContent.innerHTML = '';
 }
