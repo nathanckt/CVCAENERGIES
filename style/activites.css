@@ -291,6 +291,14 @@ html,
     .infos__btn{
         display: none;
     }
+
+    .references__title{
+        font-size: 1.2rem !important;
+    }
+    
+    .references__title--red{
+        font-size:1.8rem !important;
+    }
 }
 
 @media (min-width: 1500px){
