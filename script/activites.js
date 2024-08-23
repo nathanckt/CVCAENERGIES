@@ -54,7 +54,7 @@ var swiper = new Swiper(".clients__swipper", {
       },
 });
 
-
+let countmodal = 0;
 
 // L'objectif de cette fonction est de pouvoir modifier les icones depuis Strapi
 // Pour le moment elle n'est pas en fonctionnement 
@@ -163,6 +163,7 @@ async function showReferences(secteurTheorique){
             createRef(nomChantier,urlImagePrincipal,counter);
             ouverturePopUp();
             fermeturePopUp();
+
         }
     })
 }
@@ -323,7 +324,7 @@ async function createModal(nomChantier){
             reference.attributes.Photos.data.forEach(image =>{
                 const img = document.createElement("img");
                 img.className = "modal__image";
-                img.src = "../../my-strapi-project/public" + image.attributes.url;
+                img.src =  image.attributes.url;
                 imageContent.appendChild(img);
             })
             
@@ -350,8 +351,10 @@ function ouverturePopUp(){
     
     const modalTriggersEntry = document.querySelectorAll(".modal-trigger-entry"); 
     
+    console.log("test");
     modalTriggersEntry.forEach(trigger => {
         trigger.addEventListener("click", () => {
+            console.log("test2");
             const reference = trigger.closest(".reference");
             const nomChantier = reference.querySelector(".reference__title").textContent.trim();
             modal.classList.add("active");
@@ -359,7 +362,10 @@ function ouverturePopUp(){
             const hexa = document.querySelector(".secteurs");
             hexa.classList.add("hidden");
 
-            createModal(nomChantier);
+            if(countmodal==0){
+                createModal(nomChantier);
+                countmodal = 1;
+            }
         });
     });
 }
@@ -374,6 +380,7 @@ function fermeturePopUp(){
         trigger.addEventListener("click", () => {
             modal.classList.remove("active");
             deleteModal();
+            countmodal = 0;
         });
     });
 }

@@ -362,7 +362,7 @@ async function createModal(nomChantier){
             reference.attributes.Photos.data.forEach(image =>{
                 const img = document.createElement("img");
                 img.className = "modal__image";
-                img.src = "../../my-strapi-project/public" + image.attributes.url;
+                img.src = image.attributes.url;
                 imageContent.appendChild(img);
             })
             
@@ -383,6 +383,7 @@ async function createModal(nomChantier){
     }
 }
 
+let countmodal = 0 ;
 function ouverturePopUp(){
     const modal = document.querySelector(".references__modal");
 
@@ -399,7 +400,10 @@ function ouverturePopUp(){
             hexa.classList.add("hidden");
 
             // Jusqu'à ça c'est good
-            createModal(nomChantier);
+            if(countmodal==0){
+                createModal(nomChantier);
+                countmodal = 1;
+            }
         });
     });
 }
@@ -412,6 +416,7 @@ function fermeturePopUp(){
         trigger.addEventListener("click", () => {
             modal.classList.remove("active");
             deleteModal();
+            countmodal = 0;
         });
     });
 }
