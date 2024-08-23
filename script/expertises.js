@@ -55,7 +55,7 @@ var swiper = new Swiper(".clients__swipper", {
 });
 
 async function showSecteurs(){
-    // const reponse = await fetch("http://localhost:1337/api/secteurs?populate=*");
+    // const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
     const reponse = await fetch("../packages/references.json");
     const secteurs = await reponse.json();
 
@@ -185,7 +185,7 @@ function getNom(){
 const contentRef = document.querySelector(".references__content");
 
 async function showReferences(domaineTheorique){
-    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*");
     const references = await reponse.json();
 
     contentRef.innerHTML = "";
@@ -238,7 +238,7 @@ function createRef(nom,url){
 async function createModal(nomChantier){
     const modalContent = document.querySelector(".modal__content");
 
-    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*");
     const references = await reponse.json();
 
     for (let reference of references.data) {
@@ -267,7 +267,7 @@ async function createModal(nomChantier){
 
             const baniere = document.createElement("img");
             baniere.className = "modal__baniere";
-            baniere.src = "../../my-strapi-project/public" + reference.attributes.Baniere.data.attributes.url; // CHANGER CLOUD
+            baniere.src =  reference.attributes.Baniere.data.attributes.url; // CHANGER CLOUD
             hero.appendChild(baniere);
 
             modalContent.appendChild(hero);

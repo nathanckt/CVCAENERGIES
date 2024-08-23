@@ -22,7 +22,7 @@ function envoiForm(){
                 }
             };
       
-            const createResponse = await fetch('http://localhost:1337/api/messages', { // Remplace "your-content-type" par ton content-type
+            const createResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/messages', { // Remplace "your-content-type" par ton content-type
                 method: 'POST',
                 headers: {
                     // 'Authorization': `Bearer ${token}`,

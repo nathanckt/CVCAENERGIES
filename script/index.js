@@ -1,5 +1,5 @@
 async function MajChiffres() {
-    const reponse = await fetch("http://localhost:1337/api/chiffre");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/chiffre");
     const chiffres = await reponse.json();
 
     const annee = document.querySelector(".chiffres__annees");
@@ -17,7 +17,7 @@ MajChiffres();
 
 
 async function ShowReferences(){
-    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*");
     const references = await reponse.json();
 
     references.data.forEach(reference => {
@@ -67,7 +67,7 @@ function createRef(nom,url){
 
 async function createModal(nomChantier){
     const modalContent = document.querySelector(".modal__content");
-    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*");
     const references = await reponse.json();
 
 

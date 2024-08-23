@@ -1,6 +1,6 @@
 // async function fetchTemoignages() {
 //     try {
-//         const response = await fetch('http://localhost:1337/api/temoignages?populate=*');
+//         const response = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/temoignages?populate=*');
 //         const data = await response.json();
 //         return data.data; // Assumant que les témoignages sont sous la clé 'data'
 //     } catch (error) {
@@ -69,7 +69,7 @@ const temoignagesDiv = document.querySelector(".swiper-wrapper");
 // Fonctionne pour afficher les différentes offres
 async function createTemoignage(){
     // Récupération des données 
-    const reponse = await fetch("http://localhost:1337/api/temoignages?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/temoignages?populate=*");
     const temoignagnes = await reponse.json();
 
     

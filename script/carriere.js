@@ -5,7 +5,7 @@ const cards = document.querySelector(".offers__cards");
 // Fonctionne pour afficher les différentes offres
 async function createCard() {
     // Récupération des données
-    const response = await fetch("http://localhost:1337/api/offres?populate=*");
+    const response = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/offres?populate=*");
     const offers = await response.json();
 
     // Vérification s'il y a des offres disponibles
@@ -169,7 +169,7 @@ function deleteModal(){
 }
 
 async function recupDonnees(offreTitle) {
-    const reponse = await fetch("http://localhost:1337/api/offres?populate=*");
+    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/offres?populate=*");
     const offers = await reponse.json();
     
     let src, resum, infos;
@@ -180,8 +180,7 @@ async function recupDonnees(offreTitle) {
         if (offerData.NomOffre === offreTitle) {
             resum = offerData.Resume;
             infos = offerData.InfosComplementaire;
-            // src = "../my-strapi-project/public" + offerData.Image.data.attributes.formats.thumbnail.url; //CLOUD
-            src = "../assets/carrieres/design-seul.png";
+            src = offerData.Image.data.attributes.formats.thumbnail.url; //CLOUD
             break;
         }
     }
@@ -242,7 +241,7 @@ function envoiForm(){
             formData.append('files', cv);
             formData.append('files', motivation);
       
-            const uploadResponse = await fetch('http://localhost:1337/api/upload', {
+            const uploadResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/upload', {
                 method: 'POST',
                 // headers: {
                 //     'Authorization': `Bearer ${token}`
@@ -269,7 +268,7 @@ function envoiForm(){
                 }
             };
       
-            const createResponse = await fetch('http://localhost:1337/api/candidatures', { // Remplace "your-content-type" par ton content-type
+            const createResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/candidatures', { // Remplace "your-content-type" par ton content-type
                 method: 'POST',
                 headers: {
                     // 'Authorization': `Bearer ${token}`,

@@ -22,7 +22,7 @@ new ResizeObserver(entries => {
   }).observe(document.body)
 
 
-const reponse = await fetch("http://localhost:1337/api/reference");
+const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/reference");
 const references = await reponse.json();
 
 const reference = references[0];
