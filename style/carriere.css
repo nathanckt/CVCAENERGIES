@@ -50,6 +50,9 @@
 
 /* OFFERS */
 
+.no-offers-image{
+    width: 90vw;
+}
 .offers__title--red{
     top: 50px;
     left: -45px;
@@ -420,5 +423,80 @@ small{
 
     .form__left label{
         font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width: 1100px){
+    .content{
+        margin: 40px 5vh;
+    }
+
+    .join__title{
+        font-size: 2rem;
+    }
+
+    .join__title--red{
+        font-size: 2.8rem;
+        top: 35px
+    }
+    .offers__title{
+        font-size: 2rem;
+    }
+
+    .offers__title--red{
+        font-size: 2.8rem;
+        top: 35px
+    }
+    .apply__title{
+        font-size: 2rem;
+    }
+
+    .apply__title--red{
+        font-size: 2.8rem;
+        top: 35px
+    }
+}
+
+@media (max-width: 750px){
+    .join__design{
+        display: none;
+    }
+
+    .content__text{
+        width: 90vw;
+    }
+
+    .form__right img{
+        display: none;
+    }
+
+    .apply__form{
+        flex-direction: column;
+        width: 90vw;
+    }
+    .apply__form{
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .form__left{
+        width: 90%;
+    }
+
+    .form__right img{
+        display: none;
+    }
+
+    .form__right{
+        width: 100%;
+    }
+
+    .form__label--confid{
+        font-size: 1rem;
+    }
+
+    .apply{
+        margin-bottom: 80px;
     }
 }

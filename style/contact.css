@@ -61,6 +61,7 @@
     border-radius: 10px;
     margin-bottom: 20px;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .form__input,
@@ -295,4 +296,157 @@ textarea{
     .agence iframe{
         width: 100%;
     }
+}
+
+
+@media (max-width: 1350px){
+    .form__label--confid{
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1000px){
+    .form__label--confid{
+        font-size: 0.6rem;
+    }
+
+    .direct__form{
+        width: 90vw;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 1000px){
+    .content{
+        margin: 40px 3vw;
+    }
+
+    .contact__title{
+        font-size: 2rem;
+    }
+
+    .contact__title--red{
+        font-size: 2.5rem;
+        top: 35px;
+    }
+
+    .direct__title{
+        font-size: 2rem;
+    }
+
+    .direct__title--red{
+        font-size: 2.5rem;
+        top: 35px;
+    }
+
+    .agences__title{
+        font-size: 2rem;
+    }
+
+    .agences__title--red{
+        font-size: 2.5rem;
+        top: 35px;
+    }
+
+        /* AGENCES */
+        .agences__title{
+            font-size: 2.3rem;
+        }
+    
+        .agences__title--red{
+            font-size: 2.6rem;
+            top: 35px;
+        }
+    
+        .agences__map{
+            flex-direction: column;
+            gap: 60px;
+            margin: 0px;
+        }
+    
+        .agence{
+            width: 90vw;
+        }
+    
+        .agence iframe{
+            width: 100%;
+        }
+}
+
+@media (min-width: 500px) and (max-width: 750px){
+    .form__right img{
+        display: none;
+    }
+
+    .direct__form{
+        flex-direction: column;
+        width: 90vw;
+    }
+    .direct__form{
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .form__left{
+        width: 90%;
+    }
+
+    .form__right img{
+        display: none;
+    }
+
+    .form__right{
+        width: 100%;
+    }
+
+    .form__label--confid{
+        font-size: 1rem;
+    }
+
+    .direct{
+        margin-bottom: 80px;
+    }
+
+    /* COORDONNEES */
+    .contact__title{
+        font-size: 2.3rem;
+    }
+
+    .contact__title--red{
+        font-size: 2.6rem;
+        top: 35px;
+    }
+
+    .contact__cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact__card{
+        width: 70vw;
+    }
+
+        /* AGENCES */
+        .agences__title{
+            font-size: 2.3rem;
+        }
+    
+        .agences__title--red{
+            font-size: 2.6rem;
+            top: 35px;
+        }
+    
+        .agences__map{
+            flex-direction: column;
+            gap: 60px;
+            margin: 0px;
+        }
+    
+        .agence{
+            width: 90vw;
+        }
+    
+        .agence iframe{
+            width: 100%;
+        }
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    showInfos("Tertiaire");
-    showReferences("Tertiaire");
+    showInfos("Chauffage");
+    showReferences("Chauffage");
     var swiper = new Swiper(".domaines__swipper", {
         effect: "coverflow",
         grabCursor: true,
@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 4.5,
         loop: true,
         loopedSlides: 4,
+        breakpoints: {
+            0: {
+              slidesPerView: 2.5,
+            },
+            750: {
+              slidesPerView: 4.5,
+            },
+          },
         coverflowEffect: {
           rotate: 20,
           stretch: 0,
@@ -27,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     swiper.on('transitionEnd', function(){
         showInfos(swiper.slides[swiper.activeIndex].querySelector(".domaines__icone").alt);
-        // showReferences(swiper.slides[swiper.activeIndex].querySelector(".domaines__icone").alt);
+        showReferences(swiper.slides[swiper.activeIndex].querySelector(".domaines__icone").alt);
     })
 });
 
@@ -84,7 +92,6 @@ async function showInfos(nom){
     const reponse = await fetch("../../packages/expertises.json");
     const expertises = await reponse.json();
 
-    console.log(nom);
     expertises.data.forEach(exper =>{
         if(exper.attributes.expertise === nom){
             createInfos(exper.attributes.titreExpertise, exper.attributes.paragraphe1, exper.attributes.paragraphe2, exper.attributes.titreSaviez, exper.attributes.paragraphe3, exper.attributes.paragraphe4, exper.attributes.srcImage1, exper.attributes.srcImage2);
@@ -160,13 +167,10 @@ function createInfos(titre1, paragraphe1, paragraphe2, titre2, paragraphe3, para
 
 function getNom(){
         const active = document.querySelector(".swiper-slide-active");
-        console.log(active);
-        console.log("test");
         if (active) {
             const icone = active.querySelector(".domaines__icone");
             if (icone) {
                 const nom = icone.alt;
-                console.log(nom);
                 return nom;
             } else {
                 console.error("Aucun élément avec la classe 'domaines__icone' n'a été trouvé dans 'swiper-slide-active'.");
@@ -180,27 +184,30 @@ function getNom(){
 // REFERENCES
 const contentRef = document.querySelector(".references__content");
 
-async function showReferences(secteurTheorique){
-    const reponse = await fetch("http://localhost:1337/api/reference?populate=*");
+async function showReferences(domaineTheorique){
+    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
     const references = await reponse.json();
-    let counter = 0;
 
     contentRef.innerHTML = "";
 
     references.data.forEach(reference =>{
-        counter = counter + 1;
-        const secteur = reference.attributes.secteur.data.attributes.NomSecteur;
-        if (secteur === secteurTheorique){
-            let nomChantier = reference.attributes.NomChantier;
-            let urlImagePrincipal = "../../my-strapi-project/public" + reference.attributes.ImagePrincipale.data.attributes.url;
-
-            createRef(nomChantier,urlImagePrincipal,counter);
-            ouverturePopUp();
-        }
+        const domaines = reference.attributes.domaines.data;
+        
+        domaines.forEach(domaine =>{
+            if (domaine.attributes.NomDomaine === domaineTheorique){
+                let nomChantier = reference.attributes.NomChantier;
+                // let urlImagePrincipal = "../../my-strapi-project/public" + reference.attributes.Premiere.data.attributes.url;
+                let urlImagePrincipal = "../../assets/IMG_5095.jpg";
+    
+                createRef(nomChantier,urlImagePrincipal);
+                ouverturePopUp();
+                fermeturePopUp();
+            }
+        })
     })
 }
 
-function createRef(nom,url,count){
+function createRef(nom,url){
     const divRef = document.createElement("div");
     divRef.className = "reference";
 
@@ -231,90 +238,145 @@ function createRef(nom,url,count){
 async function createModal(nomChantier){
     const modalContent = document.querySelector(".modal__content");
 
-    const reponse = await fetch("http://localhost:1337/api/reference?populate=*");
+    const reponse = await fetch("http://localhost:1337/api/references?populate=*");
     const references = await reponse.json();
 
     for (let reference of references.data) {
-        console.log("test");
         const referenceData = reference.attributes;
-        if (referenceData.NomOffre === nomChantier) {
+        console.log(nomChantier);
+        if (referenceData.NomChantier === nomChantier) {
             const hero = document.createElement("div");
+
+            // Hero 
             hero.className = "modal__hero";
 
             const chantier = document.createElement("h2");
             chantier.className = "modal__title";
-            chantier.textContent = nomChantier & "-" & reference.attributes.LocalisationChantier;
+            chantier.textContent = nomChantier + " - " + reference.attributes.LocalisationChantier;
             hero.appendChild(chantier);
 
             const sousTitre = document.createElement("h2");
             sousTitre.className = "modal__subtitle";
             sousTitre.textContent = reference.attributes.SousTitre;
             hero.appendChild(sousTitre);
+            
+            const lot = document.createElement("h2");
+            lot.className = "modal__lot";
+            lot.textContent = reference.attributes.Lot;
+            hero.appendChild(lot);
 
             const baniere = document.createElement("img");
             baniere.className = "modal__baniere";
-            baniere.textContent = "../../my-strapi-project/public" + reference.attributes.Baniere.data.attributes.url;
+            baniere.src = "../../my-strapi-project/public" + reference.attributes.Baniere.data.attributes.url; // CHANGER CLOUD
             hero.appendChild(baniere);
 
             modalContent.appendChild(hero);
+            
+
+            // DESCRIPTION
+            const titreDescript = document.createElement("h4");
+            titreDescript.className = "modal__info--title";
+            titreDescript.textContent = "Objet du marché : ";
+            modalContent.appendChild(titreDescript); 
 
             const descript = document.createElement("p");
             descript.className = "modal__descript";
-            descript.textContent = reference.attributes.Description;
+            descript.innerHTML = reference.attributes.Description;
             modalContent.appendChild(descript);
 
+            // INFOS
             const infos = document.createElement("div");
             infos.className = "modal__infos";
 
             const infosG = document.createElement("div");
             infosG.className = "modal__infos--gauche";
-
+            
             const infosD = document.createElement("div");
             infosD.className = "modal__infos--droite";
+            
+            const titreMontant = document.createElement("h4");
+            titreMontant.className = "modal__info--title";
+            titreMontant.textContent = "Montant du projet : " ;
+            infosD.appendChild(titreMontant);
 
             const montant = document.createElement("p");
             montant.className = "modal__info";
-            montant.textContent = "Montant du projet : " & reference.attributes.MontantChantier;
+            montant.textContent = reference.attributes.MontantChantier;
             infosD.appendChild(montant);
-
+            
+            const titreMaitre = document.createElement("h4");
+            titreMaitre.className = "modal__info--title";
+            titreMaitre.textContent = "Maître d'ouvrage : ";
+            infosG.appendChild(titreMaitre); 
+            
             const maitre = document.createElement("p");
             maitre.className = "modal__info";
-            maitre.textContent = "Maître d'ouvrage : " & reference.attributes.MaitreOuvrage;
-            infosG.appendChild(maitre);
-
+            maitre.textContent = reference.attributes.MaitreOuvrage;
+            infosG.appendChild(maitre); 
+            
+            const titreArchi = document.createElement("h4");
+            titreArchi.className = "modal__info--title";
+            titreArchi.textContent = "Architecte : ";
+            infosG.appendChild(titreArchi); 
+            
             const archi = document.createElement("p");
             archi.className = "modal__info";
-            archi.textContent = "Architecte : " & reference.attributes.Architecte;
+            archi.textContent = reference.attributes.Architecte;
             infosG.appendChild(archi);
-
+            
+            const titreEtude = document.createElement("h4");
+            titreEtude.className = "modal__info--title";
+            titreEtude.textContent = "Bureau d'Etudes : ";
+            infosG.appendChild(titreEtude); 
+            
             const etude = document.createElement("p");
             etude.className = "modal__info";
-            etude.textContent = "Bureau d'Etudes : " & reference.attributes.BureauEtude;
+            etude.textContent = reference.attributes.BureauEtude;
             infosG.appendChild(etude);
-
+            
+            const titreDate = document.createElement("h4");
+            titreDate.className = "modal__info--title";
+            titreDate.textContent = "Date de Livraison : ";
+            infosD.appendChild(titreDate); 
+            
             const date = document.createElement("p");
             date.className = "modal__info";
-            date.textContent = "Date de livraison : " & reference.attributes.DateLivraison;
+            date.textContent = reference.attributes.DateLivraison;
             infosD.appendChild(date);
+            
+            const titreDuree = document.createElement("h4");
+            titreDuree.className = "modal__info--title";
+            titreDuree.textContent = "Durée de l'intervention : ";
+            infosD.appendChild(titreDuree); 
 
             const duree = document.createElement("p");
             duree.className = "modal__info";
-            duree.textContent = "Intervention CVCA Energies : " & reference.attributes.DureeChantier;
+            duree.textContent = reference.attributes.DureeChantier;
             infosD.appendChild(duree);
 
             infos.appendChild(infosG);
             infos.appendChild(infosD);
-
+            
             const imageContent = document.createElement("div");
             imageContent.className = "modal__images";
-            reference.attributes.ImagesSecondaires.forEach(image =>{
+            reference.attributes.Photos.data.forEach(image =>{
                 const img = document.createElement("img");
                 img.className = "modal__image";
-                img.url = "../../my-strapi-project/public" + image.data.attributes.url;
+                img.src = "../../my-strapi-project/public" + image.attributes.url;
                 imageContent.appendChild(img);
             })
-
+            
             modalContent.appendChild(infos);
+            
+            const titreMissions = document.createElement("h4");
+            titreMissions.className = "modal__info--title";
+            titreMissions.textContent = "Missions CVCA Energies : ";
+            modalContent.appendChild(titreMissions); 
+
+            const missions = document.createElement("p");
+            missions.className = "modal__info--mission";
+            missions.innerHTML = reference.attributes.MissionsCVCA;
+            modalContent.appendChild(missions);
             modalContent.appendChild(imageContent);
             break;
         }
@@ -325,13 +387,16 @@ function ouverturePopUp(){
     const modal = document.querySelector(".references__modal");
 
     const modalTriggersEntry = document.querySelectorAll(".modal-trigger-entry");
-    console.log(modalTriggersEntry);
+
 
     modalTriggersEntry.forEach(trigger => {
         trigger.addEventListener("click", () => {
             const reference = trigger.closest(".reference");
             const nomChantier = reference.querySelector(".reference__title").textContent.trim();
             modal.classList.add("active");
+
+            const hexa = document.querySelector(".domaines");
+            hexa.classList.add("hidden");
 
             // Jusqu'à ça c'est good
             createModal(nomChantier);
@@ -341,16 +406,19 @@ function ouverturePopUp(){
 
 function fermeturePopUp(){
     const modalTriggersExit = document.querySelectorAll(".modal-trigger");
+    const modal = document.querySelector(".references__modal");
 
     modalTriggersExit.forEach(trigger => {
         trigger.addEventListener("click", () => {
-            modal.classList.toggle("active");
+            modal.classList.remove("active");
             deleteModal();
         });
     });
 }
 
 function deleteModal(){
+    const hexa = document.querySelector(".domaines");
+    hexa.classList.remove("hidden");
     const modalContent = document.querySelector(".modal__content");
     modalContent.innerHTML = '';
 }

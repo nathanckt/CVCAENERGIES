@@ -90,6 +90,10 @@ html,
 .infos h4{
     margin-top: 0px;
 }
+
+.infos{
+    height: max-content !important;
+}
 /* REFERENCES */
 
 .references{
@@ -180,8 +184,10 @@ html,
 
 
  .modal__content{
+    z-index: 20;
+    position: absolute;
     width: 65%;
-    max-height: 500px;
+    max-height: 65vh;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -190,7 +196,7 @@ html,
     background: #fff;
     border-radius: 5px;
     position: absolute;
-    top: 60%;
+    margin-top: 40vh;
     left: 50%;
     transform: translate(-50%,-50%);
  }
@@ -211,10 +217,15 @@ html,
 }
 
 .modal__image{
-    min-width: 35%;
+    width: 30%;
     padding: 20px 0px;
 }
 
+.modal__images{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
 .modal__top{
     display: flex;
     flex-direction: row;
@@ -230,14 +241,225 @@ html,
     align-self: flex-end;
 }
 
-.modal__title{
-    color: var(--cvca-red);
+.modal__hero{
+    position: relative;
 }
 
+.modal__title{
+    color: var(--cvca-red);
+    position: absolute;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    top: 10%;
+    font-size: clamp(1rem, 2.5vw, 2.2rem);
+}
 
+.modal__subtitle{
+    position: absolute;
+    color: #fff;
+    background-color: var(--cvca-grey);
+    padding: 10px 10px;
+    border-radius: 10px;
+    top: 37% !important;
+    font-size: clamp(1rem, 2vw, 2.2rem);
+}
+
+.modal__lot{
+    position: absolute;
+    color: #fff;
+    background-color: var(--cvca-red);
+    padding: 10px 10px;
+    border-radius: 10px;
+    top: 65%;
+    font-size: clamp(1rem, 2.3vw, 2.2rem);
+}
+
+.hidden{
+    display: none;
+}
+
+.modal__baniere{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.modal__info--title{
+    margin-bottom: 0px;
+}
+
+.modal__infos{
+    display: flex;
+}
+
+.modal__infos--gauche{
+    width: 45%;
+}
+
+.modal__infos--droite{
+    width: 45%;
+}
 
 /* CLIENTS */
 
 
+/* RESPONSIVE */
+@media (max-width: 1000px){
+    h1{
+        font-size: clamp(1rem, 5.8vw, 7rem);
+    }
+
+    .secteurs{
+        margin-top: 20px;
+    }
+
+    .infos__content{
+        margin: 40px 3vw;
+    }
+    .content{
+        margin: 40px 3vw;
+    }
+
+    .references__title{
+        margin: 40px 5vw !important;
+        margin-bottom: 105px !important;
+    }
+    .infos__text{
+        font-size: 1.2rem;
+    }
+
+    .infos__text h4{
+        font-size: 1.5rem ;
+    }
+}
+
+@media (max-width: 500px){
+    .infos__btn{
+        display: none;
+    }
+
+    .references__title{
+        font-size: 1.5rem !important;
+    }
+    .references__title--red{
+        font-size: 2rem !important;
+    }
+}
+
+@media (min-width: 1500px){
+    .content{
+        margin: 50px 10vw;
+    }
+
+    .infos__text{
+        font-size: 1.4rem;
+    }
 
 
+    .reference {
+        width: 550px;
+    }
+
+    .reference__title{
+        font-size: 3.5rem;
+    }
+}
+
+@media(min-width: 750px) and (max-width: 1100px){
+    .reference{
+        width: 35vw !important;
+        height: 50vw;
+    }
+}
+
+
+@media(max-width: 750px){
+    .reference{
+        width: 900%;
+    }
+
+    .references :nth-child(2){
+        top: 0px;
+    }
+    
+    .references :nth-child(4){
+        top: 0px;
+    }
+    
+    .references :nth-child(6){
+        top: 0px;
+    }
+
+    .references__title{
+        font-size: 2rem;
+        margin-top: 100px !important;
+    }
+
+    .references__title--red{
+        font-size: 2.4rem;
+        top: 35px;
+        left: -65px;
+    }
+
+    .modal__content p{
+        font-size: clamp(1rem, 1.8vw, 2.5rem);
+    }
+
+    .modal__info--title{
+        font-size: clamp(1rem, 2vw, 2.5rem);
+        width: 100%;
+    }
+
+    .modal__infos{
+        flex-direction: column;
+    }
+
+    .modal__infos--droite{
+        width: 100%;
+    }
+
+    .modal__infos--gauche{
+        width: 100%;
+    }
+
+    .modal__image{
+        width: 100%;
+    }
+
+    .modal__images{
+        flex-wrap: wrap;
+    }
+
+    .infos__content{
+        flex-direction: column;
+        height: 60vh;
+    }
+
+    .infos__text p{
+        width: 100%;
+        text-align: justify;
+    }
+
+    .infos__text{
+        width: 100%;
+    }
+
+    .infos__image{
+        width: 92vw;
+    }
+
+    .infos__image--bottom{
+        order: 2;
+    }
+
+    .infos__text--bottom{
+        order: 1;
+    }
+    
+}
+
+.hidden{
+    display: none ;
+}

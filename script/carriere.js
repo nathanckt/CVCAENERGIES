@@ -3,65 +3,69 @@ const cards = document.querySelector(".offers__cards");
 
 
 // Fonctionne pour afficher les différentes offres
-async function createCard(){
-    // Récupération des données 
-    // const reponse = await fetch("http://localhost:1337/api/offres?populate=*");
-    const reponse = await fetch("../packages/offres.json");
-    const offers = await reponse.json();
+async function createCard() {
+    // Récupération des données
+    const response = await fetch("http://localhost:1337/api/offres?populate=*");
+    const offers = await response.json();
 
-    offers.data.forEach(job => {
-        // Récupération des données nécéssaires
-        const jobData = job.attributes;
+    // Vérification s'il y a des offres disponibles
+    if (offers.data.length === 0) {
+        // Si aucune offre n'est trouvée, afficher une image
+        const noOffersImage = document.createElement('img');
+        noOffersImage.src = "../assets/carrieres/no-offers.png"; // Chemin de l'image à afficher en cas d'absence d'offres
+        noOffersImage.alt = "Aucune offre disponible";
+        noOffersImage.className = "no-offers-image"; // Ajoutez une classe si vous souhaitez styliser l'image
 
-        // Création de la card
-        const card = document.createElement('div');
-        card.className = "card";
+        // Ajout de l'image dans le HTML
+        cards.appendChild(noOffersImage);
+    } else {
+        // Sinon, parcourir les offres et créer les cartes
+        offers.data.forEach(job => {
+            // Récupération des données nécessaires
+            const jobData = job.attributes;
 
-        const imageOffre = document.createElement('img');
-        imageOffre.className = "card__img";
-        if (jobData.Image.data === null){
-            imageOffre.src = "../assets/carrieres/design-seul.png"
-        } 
-        else{            
-            imageOffre.src = "../my-strapi-project/public" + jobData.Image.data.attributes.formats.thumbnail.url;
-        }
-        // imageOffre.src = jobData.Image;
-        imageOffre.alt = jobData.NomOffre;
-        card.appendChild(imageOffre);
+            // Création de la card
+            const card = document.createElement('div');
+            card.className = "card";
 
-        const nomOffre = document.createElement('h4');
-        nomOffre.className = "card__title";
-        nomOffre.textContent = jobData.NomOffre;
-        console.log(nomOffre);
-        card.appendChild(nomOffre);
+            const imageOffre = document.createElement('img');
+            imageOffre.className = "card__img";
+            if (jobData.Image.data === null) {
+                imageOffre.src = "../assets/carrieres/design-seul.png";
+            } else {
+                // Utiliser l'image de l'offre si disponible
+                imageOffre.src = "../assets/carrieres/design-seul.png"; 
+                // Vous pouvez changer ceci pour utiliser l'URL réelle de l'image de l'offre
+            }
+            imageOffre.alt = jobData.NomOffre;
+            card.appendChild(imageOffre);
 
-        const miniResume = document.createElement('p');
-        miniResume.className = "card__sumary";
-        miniResume.textContent = jobData.MiniResume;
-        card.appendChild(miniResume);
+            const nomOffre = document.createElement('h4');
+            nomOffre.className = "card__title";
+            nomOffre.textContent = jobData.NomOffre;
+            card.appendChild(nomOffre);
 
-        const applyButton = document.createElement('button');
-        applyButton.className = "card__btn modal-trigger-entry";
-        applyButton.textContent = "En savoir plus";
-        card.appendChild(applyButton);
+            const miniResume = document.createElement('p');
+            miniResume.className = "card__sumary";
+            miniResume.textContent = jobData.MiniResume;
+            card.appendChild(miniResume);
 
-        optionsMenu(jobData.NomOffre, job.id);
+            const applyButton = document.createElement('button');
+            applyButton.className = "card__btn modal-trigger-entry";
+            applyButton.textContent = "En savoir plus";
+            card.appendChild(applyButton);
 
-        applyButton.addEventListener("click", () => {
-            console.log("test");
-            const card = applyButton.closest(".card");
-            
-            // Récupérez le titre de l'offre à partir de l'élément h4 dans cette div card
-            const offreTitle = card.querySelector(".card__title").textContent.trim();
-            
-            // Utilisez le titre récupéré comme argument pour toggleModal
-            toggleModal(offreTitle);
+            applyButton.addEventListener("click", () => {
+                const card = applyButton.closest(".card");
+                const offreTitle = card.querySelector(".card__title").textContent.trim();
+                toggleModal(offreTitle);
+            });
+
+            // Ajout de la card dans le html
+            cards.appendChild(card);
+            lienObject();
         });
-
-        // Ajout de la card dans le html
-        cards.appendChild(card);
-        lienObject();
-    })
+    }
 }
 
 createCard();
@@ -94,7 +98,7 @@ function createModal(imageSource, titleText, resumeText, infosText){
     resume.className = "modal__resume";
 
     const infos = document.createElement("p");
-    infos.innerHTML = infosText.replace(/\n/g, '<br>');
+    // infos.innerHTML = infosText.replace("\n", '<br>');
     infos.className = "modal__infos";
 
     const postule = document.createElement("button");
@@ -176,7 +180,8 @@ async function recupDonnees(offreTitle) {
         if (offerData.NomOffre === offreTitle) {
             resum = offerData.Resume;
             infos = offerData.InfosComplementaire;
-            src = "../my-strapi-project/public" + offerData.Image.data.attributes.formats.thumbnail.url;
+            // src = "../my-strapi-project/public" + offerData.Image.data.attributes.formats.thumbnail.url; //CLOUD
+            src = "../assets/carrieres/design-seul.png";
             break;
         }
     }

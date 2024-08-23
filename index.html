@@ -178,32 +178,39 @@
                 </div>
                 <h2>Quelques<br><span>Références</span></h2>
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper wrapper__ref">
                       <div class="references__card swiper-slide">
                         <h1 class="references__title">LE HOPE</h1>
                         <img class="references__img" src="assets/references/le-hope/vue-exte.jpeg" alt="Photo Extérieur du chantier le Hope">
-                        <button class="references__btn cta">En savoir plus</button>
+                        <button class="references__btn cta modal-trigger-entry">En savoir plus</button>
                       </div>
                       <div class="references__card swiper-slide">
                         <h1 class="references__title">HOPITAL DE SOMAIN</h1>
                         <img class="references__img" src="assets/references/hopital-somain/vue-exte.jpeg" alt="Photo Extérieur de l'Hopital de Somain">
-                        <button class="references__btn cta">En savoir plus</button>
+                        <button class="references__btn cta modal-trigger-entry">En savoir plus</button>
                       </div>
                       <div class="references__card swiper-slide">
                         <h1 class="references__title">LA CATHO</h1>
                         <img class="references__img" src="assets/references/la-catho/vue-exte.jpeg" alt="Photo Extérieur du chantier la Catho">
-                        <button class="references__btn cta">En savoir plus</button>
+                        <button class="references__btn cta modal-trigger-entry">En savoir plus</button>
                       </div>
                       <div class="references__card swiper-slide">
                         <h1 class="references__title">MERCURE HOTEL</h1>
                         <img class="references__img" src="assets/references/mercure/vue-exte.jpeg" alt="Photo Extérieur du chantier Mercure Hotel">
-                        <button class="references__btn cta">En savoir plus</button>
+                        <button class="references__btn cta modal-trigger-entry">En savoir plus</button>
                       </div>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                   </div>
+                  <div class="references__modal">
+                    <div class="modal__overlay modal-trigger"></div>
+                    <div class="modal__content">
+                        <img src="assets/maintenance-site.png" alt="">
+                        <a class="cta modal__button" href="pages/competences/secteurs-activites.html">Nos références sur la page Secteurs d'Activités</a>
+                    </div>
+                </div>
                 <p>
                     Découvrez les domaines d'expertises de CVCA Energies
                 </p>
@@ -281,8 +288,8 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        <script src="script/carousel.js"></script>
         <script src="script/header.js"></script>
         <script src="script/index.js"></script>
+        <script src="script/carousel.js"></script>
     </body>
 </html>
