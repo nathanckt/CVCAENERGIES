@@ -180,7 +180,12 @@ async function recupDonnees(offreTitle) {
         if (offerData.NomOffre === offreTitle) {
             resum = offerData.Resume;
             infos = offerData.InfosComplementaire;
-            src = offerData.Image.data.attributes.formats.thumbnail.url; //CLOUD
+            if (offerData.Image.data != null){
+                src = offerData.Image.data.attributes.formats.thumbnail.url;
+            }
+            else{
+                src = "../assets/carrieres/design-seul.png";
+            }
             break;
         }
     }
