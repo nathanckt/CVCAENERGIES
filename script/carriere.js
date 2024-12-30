@@ -282,7 +282,8 @@ function envoiForm(){
                 body: JSON.stringify(entryData)
             });
       
-            const newEntry = await createResponse.json();
+            const newEntry = await createResponse.json(); //cette ligne 
+            console.log(newEntry);
             alert("Candidature envoyée !");
       
         } catch (error) {

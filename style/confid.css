@@ -1,3 +1,9 @@
 main img{
     width: 100vw;
 }
+
+main{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 10vh;
+}
