@@ -99,3 +99,8 @@ a{
     border: none;
 }
 
+.cta:hover{
+    background-color: var(--white);
+    color: var(--cvca-red);
+    cursor: pointer;
+}
