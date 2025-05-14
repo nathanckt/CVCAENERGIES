@@ -92,6 +92,10 @@ textarea{
     text-decoration: underline;
 }
 
+.form__checkbox{
+    margin-right: 10px;
+}
+
 textarea{
     resize: none;
     margin-bottom: 50px;
