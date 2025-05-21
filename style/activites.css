@@ -136,6 +136,10 @@ html,
     display: block;
  }
 
+ .navbar.hidden {
+    display: none;
+}
+
  .modal__overlay{
     position: absolute;
     width: 100%;
@@ -148,7 +152,7 @@ html,
     z-index: 20;
     position: absolute;
     width: 65%;
-    max-height: 65vh;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -157,7 +161,7 @@ html,
     background: #fff;
     border-radius: 5px;
     position: absolute;
-    margin-top: 40vh;
+    margin-top: 30vh;
     left: 50%;
     transform: translate(-50%,-50%);
  }

@@ -190,11 +190,14 @@ async function showReferences(domaineTheorique){
 
     contentRef.innerHTML = "";
 
+    let hasReferences = false;
+
     references.data.forEach(reference =>{
         const domaines = reference.attributes.domaines.data;
         
         domaines.forEach(domaine =>{
             if (domaine.attributes.NomDomaine === domaineTheorique){
+                hasReferences = true;   
                 let nomChantier = reference.attributes.NomChantier;
                 // let urlImagePrincipal = "../../my-strapi-project/public" + reference.attributes.Premiere.data.attributes.url;
                 let urlImagePrincipal = "../../assets/IMG_5095.jpg";
@@ -205,6 +208,16 @@ async function showReferences(domaineTheorique){
             }
         })
     })
+
+    if (!hasReferences) {
+        const noRefMessage = document.createElement("p");
+        const noRefMessage2 = document.createElement("p");
+        noRefMessage.className = "no-references-message";
+        noRefMessage.textContent = "Pour le moment, aucune référence disponible pour ce domaine sur le site.";
+        noRefMessage2.textContent = "Contactez-nous pour les découvrir !";
+        contentRef.appendChild(noRefMessage);
+        contentRef.appendChild(noRefMessage2);
+    }
 }
 
 function createRef(nom,url){
@@ -386,6 +399,7 @@ async function createModal(nomChantier){
 let countmodal = 0 ;
 function ouverturePopUp(){
     const modal = document.querySelector(".references__modal");
+    const navbar = document.querySelector(".navbar"); 
 
     const modalTriggersEntry = document.querySelectorAll(".modal-trigger-entry");
 
@@ -404,6 +418,10 @@ function ouverturePopUp(){
                 createModal(nomChantier);
                 countmodal = 1;
             }
+
+            if (navbar) {
+                navbar.classList.add("hidden"); // Cachez la navbar
+            }
         });
     });
 }
@@ -411,12 +429,18 @@ function ouverturePopUp(){
 function fermeturePopUp(){
     const modalTriggersExit = document.querySelectorAll(".modal-trigger");
     const modal = document.querySelector(".references__modal");
+    const navbar = document.querySelector(".navbar"); 
+
 
     modalTriggersExit.forEach(trigger => {
         trigger.addEventListener("click", () => {
             modal.classList.remove("active");
             deleteModal();
             countmodal = 0;
+
+            if (navbar) {
+                navbar.classList.remove("hidden");
+            }
         });
     });
 }

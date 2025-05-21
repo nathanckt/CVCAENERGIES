@@ -151,6 +151,8 @@ async function showReferences(secteurTheorique){
     const references = await reponse.json();
     let counter = 0;
 
+    let hasReferences = false;
+
     contentRef.innerHTML = "";
 
     references.data.forEach(reference =>{
@@ -159,6 +161,7 @@ async function showReferences(secteurTheorique){
         if (secteur === secteurTheorique){
             let nomChantier = reference.attributes.NomChantier;
             let urlImagePrincipal = reference.attributes.Premiere.data.attributes.url; 
+            hasReferences = true;
 
             createRef(nomChantier,urlImagePrincipal,counter);
             ouverturePopUp();
@@ -166,6 +169,16 @@ async function showReferences(secteurTheorique){
 
         }
     })
+
+    if (!hasReferences) {
+        const noRefMessage = document.createElement("p");
+        const noRefMessage2 = document.createElement("p");
+        noRefMessage.className = "no-references-message";
+        noRefMessage.textContent = "Pour le moment, aucune référence disponible pour ce secteur d'activité sur le site.";
+        noRefMessage2.textContent = "Contactez-nous pour les découvrir !";
+        contentRef.appendChild(noRefMessage);
+        contentRef.appendChild(noRefMessage2);
+    }
 }
 
 
@@ -350,6 +363,8 @@ function ouverturePopUp(){
     const modal = document.querySelector(".references__modal"); 
     
     const modalTriggersEntry = document.querySelectorAll(".modal-trigger-entry"); 
+    const navbar = document.querySelector(".navbar"); // Sélectionnez la navbar
+
     
     console.log("test");
     modalTriggersEntry.forEach(trigger => {
@@ -361,6 +376,10 @@ function ouverturePopUp(){
 
             const hexa = document.querySelector(".secteurs");
             hexa.classList.add("hidden");
+
+            if (navbar) {
+                navbar.classList.add("hidden"); // Cachez la navbar
+            }
 
             if(countmodal==0){
                 createModal(nomChantier);
@@ -375,12 +394,17 @@ function ouverturePopUp(){
 function fermeturePopUp(){
     const modalTriggersExit = document.querySelectorAll(".modal-trigger"); 
     const modal = document.querySelector(".references__modal");
+    const navbar = document.querySelector(".navbar"); // Sélectionnez la navbar
 
     modalTriggersExit.forEach(trigger => {
         trigger.addEventListener("click", () => {
             modal.classList.remove("active");
             deleteModal();
             countmodal = 0;
+
+            if (navbar) {
+                navbar.classList.remove("hidden"); // Réaffichez la navbar
+            }
         });
     });
 }
