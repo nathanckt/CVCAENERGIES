@@ -103,4 +103,7 @@ a{
     background-color: var(--white);
     color: var(--cvca-red);
     cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid var(--cvca-red);
 }
+

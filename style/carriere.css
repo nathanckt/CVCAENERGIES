@@ -168,6 +168,7 @@
 }
 
 .modal__image{
+    max-width: 40vh;
     min-width: 35%;
     padding: 20px 0px;
 }
@@ -313,9 +314,14 @@ small{
     font-size: 1.2rem;
     width: 100%;
     font-style: italic;
-    display: flex;
+   
     align-items: center;
     justify-content: flex-start;
+}
+
+.form__label--confid a:hover{
+    cursor: pointer;
+    color: var(--cvca-red)
 }
 
 .form__checkbox{
@@ -394,6 +400,10 @@ small{
         top: 35px;
     }
 
+    .card{
+        width: 100%;
+    }
+
     /* A terminer */
 
     /* APPLY */
@@ -457,6 +467,12 @@ small{
         font-size: 2.8rem;
         top: 35px
     }
+
+    .card{
+        width: 45%;
+    }
+
+    
 }
 
 @media (max-width: 750px){
@@ -499,5 +515,72 @@ small{
 
     .apply{
         margin-bottom: 80px;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .form__right img{
+        display: none;
+    }
+
+    .apply__form{
+        flex-direction: column;
+        width: 90vw;
+    }
+    .apply__form{
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .form__left{
+        width: 90%;
+    }
+
+    .form__right img{
+        display: none;
+    }
+
+    .form__right{
+        width: 100%;
+    }
+
+    .form__label--confid{
+        font-size: 1rem;
+    }
+
+    .apply{
+        margin-bottom: 80px;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .form__field--file {
+        margin: 0px;
+    }
+
+    .form__select {
+        width: 60vw;
+    }
+
+    .card img {
+        height: 30vh;
+        width: auto;
+    }
+
+    .card__title{
+        align-self: flex-start;
+        text-align: start;
+        margin-bottom: 0px;
+    }
+
+    .modal__image {
+        display: none;
     }
 }

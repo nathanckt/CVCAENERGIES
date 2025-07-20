@@ -55,7 +55,7 @@ var swiper = new Swiper(".clients__swipper", {
 });
 
 async function showSecteurs(){
-    // const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
+    //const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
     const reponse = await fetch("../packages/references.json");
     const secteurs = await reponse.json();
 
