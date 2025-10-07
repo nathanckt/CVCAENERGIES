@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "crincketnathan@gmail.com";
-    $subject = "Nouvelle candidature - " . htmlspecialchars($_POST["object"]);
+    $subject = "Nouvelle candidature CVCA ENERGIES - " . htmlspecialchars($_POST["object"]);
     $message = "
         Nom : " . htmlspecialchars($_POST["name"]) . "\n
         Prénom : " . htmlspecialchars($_POST["firstname"]) . "\n
@@ -51,9 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "--$boundary--";
 
     if (mail($to, $subject, $body, $headers)) {
-        echo "Votre candidature a bien été envoyée.";
+        header("Location: ../pages/carriere.html");
+        exit;
     } else {
-        echo "Erreur lors de l'envoi du mail.";
+        echo "Erreur lors de l'envoi du mail. Contactez-nous directement à l'adresse : contact@cvca-energies.fr";
     }
 }
 ?>
