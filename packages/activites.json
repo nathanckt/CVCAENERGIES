@@ -1,0 +1,28 @@
+{
+    "data" : [
+        {
+            "NomSecteur": "Tertiaire",
+            "Description": "Depuis plus de 10 ans, le secteur tertiaire constitue le cœur d'activité de CVCA Energies. Grâce à la réalisation de plus de 50 projets dans ce domaine, nous avons acquis une expertise reconnue. \n \nQu'il s'agisse de bureaux, de centres commerciaux ou d'espaces de services, CVCA Energies est votre partenaire idéal pour des solutions performantes en chauffage, ventilation, climatisation, et plomberie."
+        },
+        {
+            "NomSecteur": "Hôtellerie",
+            "Description": "Offrir confort et excellence aux clients est une priorité dans l'hôtellerie. CVCA Energies a participé à des projets majeurs comme la construction d’un hôtel 4 étoiles Mercure à Dunkerque. \n \nNous proposons des solutions innovantes et sur mesure pour répondre aux exigences de qualité et d’efficacité énergétique des établissements hôteliers."
+        },
+        {
+            "NomSecteur": "Scolaire",
+            "Description": "CVCA Energies s'engage à répondre aux besoins des établissements scolaires en modernisant leurs infrastructures.\n \n Avec des projets emblématiques tels que la rénovation du Campus Robert Schuman à Lille ou la réhabilitation du complexe sportif Berlioz à Halluin, nous mettons notre savoir-faire au service des étudiants et des équipes éducatives. Chaque projet est conçu pour offrir des espaces confortables, durables, et adaptés aux exigences actuelles."
+        },
+        {
+            "NomSecteur": "EHPAD / Résidences Etudiantes",
+            "Description": "Le bien-être de toutes les générations est au cœur des préoccupations de CVCA Energies. Que ce soit pour des résidences étudiantes, comme Première à Villeneuve-d'Ascq, ou pour des EHPAD à travers la région, nous proposons des installations performantes et respectueuses des normes en vigueur.\n \n Chauffage, plomberie, ventilation : nos équipes s'assurent de créer des environnements confortables et adaptés aux besoins spécifiques de ces structures."
+        },
+        {
+            "NomSecteur": "Hospitalier",
+            "Description": "Dans le secteur hospitalier, chaque détail compte. CVCA Energies contribue à l'amélioration des infrastructures médicales en réalisant des travaux d'ampleur, comme la restructuration du centre hospitalier de Somain ou l'extension de la polyclinique Saint-Omer. \n \nNos solutions en plomberie, climatisation, et ventilation visent à garantir des conditions optimales pour les patients comme pour les professionnels de santé."
+        },
+        {
+            "NomSecteur": "Laboratoire / Industrie",
+            "Description": "La rigueur et la précision sont essentielles dans le domaine industriel et scientifique. CVCA Energies met son expertise au service de projets complexes, tels que la modélisation et la rénovation complète de sites comme Le Creuset à Fresnoy-le-Grand.\n \nNous offrons des solutions sur mesure pour garantir des installations fiables, performantes, et conformes aux réglementations en vigueur."
+        }
+]
+}

@@ -59,7 +59,7 @@ let countmodal = 0;
 // L'objectif de cette fonction est de pouvoir modifier les icones depuis Strapi
 // Pour le moment elle n'est pas en fonctionnement 
 async function showSecteurs(){
-    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
+    //const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
     const secteurs = await reponse.json();
 
     const swiper = document.querySelector(".swiper-wrapper");
@@ -91,12 +91,13 @@ async function showSecteurs(){
 
 // Cette fonction récupère le texte de chaque secteur sur Strapi pour l'afficher 
 async function showInfos(nom){
-    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
+    //const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/secteurs?populate=*");
+    const reponse = await fetch("../../packages/activites.json");
     const secteurs = await reponse.json();
 
     secteurs.data.forEach(secteur => {
-        if (secteur.attributes.NomSecteur === nom){
-            createInfos(secteur.attributes.Description);
+        if (secteur.NomSecteur === nom){
+            createInfos(secteur.Description);
         }
     });
 }
@@ -147,7 +148,7 @@ const contentRef = document.querySelector(".references__content");
 
 // Cette fonction gère l'affichage des réfèrences et de leurs popups associés
 async function showReferences(secteurTheorique){
-    const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*"); 
+    //const reponse = await fetch("https://rational-flowers-37168cb5d5.strapiapp.com/api/references?populate=*"); 
     const references = await reponse.json();
     let counter = 0;
 
