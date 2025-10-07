@@ -69,7 +69,7 @@ async function createCard() {
 }
 
 createCard();
-envoiForm();
+//envoiForm();
 
 
 function createModal(imageSource, titleText, resumeText, infosText){
@@ -225,72 +225,72 @@ function lienObject() {
 }
 
 
-function envoiForm(){
-    document.getElementById('applyForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
+// function envoiForm(){
+//     document.getElementById('applyForm').addEventListener('submit', async (e) => {
+//         e.preventDefault();
       
-        const name = document.getElementById('name').value;
-        const firstname = document.getElementById('firstname').value;
-        const tel = document.getElementById('tel').value;
-        const mail = document.getElementById('mail').value;
-        const object = document.getElementById('object').value;
-        const messageForm = document.getElementById('message').value;
-        const cv = document.getElementById('cv').files[0];
-        const motivation = document.getElementById('motivation').files[0];
+//         const name = document.getElementById('name').value;
+//         const firstname = document.getElementById('firstname').value;
+//         const tel = document.getElementById('tel').value;
+//         const mail = document.getElementById('mail').value;
+//         const object = document.getElementById('object').value;
+//         const messageForm = document.getElementById('message').value;
+//         const cv = document.getElementById('cv').files[0];
+//         const motivation = document.getElementById('motivation').files[0];
       
-        // const token = 'YOUR_TOKEN'; // Remplace avec ton token
+//         // const token = 'YOUR_TOKEN'; // Remplace avec ton token
       
-        try {
-            // Upload des fichiers
-            const formData = new FormData();
-            formData.append('files', cv);
-            formData.append('files', motivation);
+//         try {
+//             // Upload des fichiers
+//             const formData = new FormData();
+//             formData.append('files', cv);
+//             formData.append('files', motivation);
       
-            const uploadResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/upload', {
-                method: 'POST',
-                // headers: {
-                //     'Authorization': `Bearer ${token}`
-                // },
-                body: formData
-            });
+//             const uploadResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/upload', {
+//                 method: 'POST',
+//                 // headers: {
+//                 //     'Authorization': `Bearer ${token}`
+//                 // },
+//                 body: formData
+//             });
       
-            const uploadedFiles = await uploadResponse.json();
+//             const uploadedFiles = await uploadResponse.json();
       
-            const cvId = uploadedFiles[0].id;
-            const motivationId = uploadedFiles[1].id;
+//             const cvId = uploadedFiles[0].id;
+//             const motivationId = uploadedFiles[1].id;
       
-            // Créer une nouvelle entrée avec les données du formulaire
-            const entryData = {
-                data: {
-                    nom: name,
-                    prenom: firstname,
-                    email: mail,
-                    tel: tel,
-                    objet: object,
-                    message: messageForm,
-                    cv: cvId,
-                    motiv: motivationId
-                }
-            };
+//             // Créer une nouvelle entrée avec les données du formulaire
+//             const entryData = {
+//                 data: {
+//                     nom: name,
+//                     prenom: firstname,
+//                     email: mail,
+//                     tel: tel,
+//                     objet: object,
+//                     message: messageForm,
+//                     cv: cvId,
+//                     motiv: motivationId
+//                 }
+//             };
       
-            const createResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/candidatures', { // Remplace "your-content-type" par ton content-type
-                method: 'POST',
-                headers: {
-                    // 'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(entryData)
-            });
+//             const createResponse = await fetch('https://rational-flowers-37168cb5d5.strapiapp.com/api/candidatures', { // Remplace "your-content-type" par ton content-type
+//                 method: 'POST',
+//                 headers: {
+//                     // 'Authorization': `Bearer ${token}`,
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify(entryData)
+//             });
       
-            const newEntry = await createResponse.json(); //cette ligne 
-            console.log(newEntry);
-            alert("Candidature envoyée !");
+//             const newEntry = await createResponse.json(); //cette ligne 
+//             console.log(newEntry);
+//             alert("Candidature envoyée !");
       
-        } catch (error) {
-            console.error('Erreur lors de la soumission du formulaire :', error);
-        }
-      });
-}
+//         } catch (error) {
+//             console.error('Erreur lors de la soumission du formulaire :', error);
+//         }
+//       });
+// }
 
 
 // CONTROLE DU FICHIER
