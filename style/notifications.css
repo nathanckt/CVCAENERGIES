@@ -1,0 +1,152 @@
+/**
+ * Styles pour le système de notifications
+ */
+
+/* Conteneur de notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 400px;
+    z-index: 9999;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(450px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(450px);
+        opacity: 0;
+    }
+}
+
+.notification--success {
+    border-left: 4px solid #4CAF50;
+    background-color: #f1f8f4;
+}
+
+.notification--error {
+    border-left: 4px solid #D32F2F;
+    background-color: #fef1f0;
+}
+
+.notification--warning {
+    border-left: 4px solid #FFA500;
+    background-color: #fff8f0;
+}
+
+.notification--info {
+    border-left: 4px solid #2196F3;
+    background-color: #f0f7ff;
+}
+
+.notification__content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notification__icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.notification--success .notification__icon {
+    color: #4CAF50;
+}
+
+.notification--error .notification__icon {
+    color: #D32F2F;
+}
+
+.notification--warning .notification__icon {
+    color: #FFA500;
+}
+
+.notification--info .notification__icon {
+    color: #2196F3;
+}
+
+.notification__message {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.notification__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    margin: -8px;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.notification__close:hover {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+/* Mode sombre (optionnel) */
+@media (prefers-color-scheme: dark) {
+    .notification--success {
+        background-color: #1b4d2b;
+        color: #a8d5a8;
+    }
+
+    .notification--error {
+        background-color: #4d1b1b;
+        color: #d5a8a8;
+    }
+
+    .notification--warning {
+        background-color: #4d3a1b;
+        color: #d5c4a8;
+    }
+
+    .notification--info {
+        background-color: #1b3a4d;
+        color: #a8c4d5;
+    }
+
+    .notification__message {
+        color: #fff;
+    }
+
+    .notification__close {
+        color: #aaa;
+    }
+
+    .notification__close:hover {
+        color: #fff;
+    }
+}

@@ -1,60 +1,56 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "crincketnathan@gmail.com";
-    $subject = "Nouvelle candidature CVCA ENERGIES - " . htmlspecialchars($_POST["object"]);
-    $message = "
-        Nom : " . htmlspecialchars($_POST["name"]) . "\n
-        Prénom : " . htmlspecialchars($_POST["firstname"]) . "\n
-        Téléphone : " . htmlspecialchars($_POST["tel"]) . "\n
-        Email : " . htmlspecialchars($_POST["mail"]) . "\n
-        Objet : " . htmlspecialchars($_POST["object"]) . "\n
-        Message : " . htmlspecialchars($_POST["message"]) . "\n
-        Offre : " . htmlspecialchars($_POST["category"]) . "\n
-    ";
+/**
+ * Traitement du formulaire de candidature
+ * 
+ * Utilise le système sécurisé de mailing avec PHPMailer
+ */
 
-    $headers = "From: " . htmlspecialchars($_POST["mail"]);
+// Configuration de base
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/Mailer.php';
+require_once __DIR__ . '/CarriereMailer.php';
 
-    // Gestion des fichiers joints
-    $boundary = md5(uniqid());
-    $headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"$boundary\"";
+use CVCAEnergies\CarriereMailer;
 
-    $body = "--$boundary\r\n";
-    $body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n\r\n";
-    $body .= $message . "\r\n";
+// Vérifier que c'est une requête POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405);
+    exit("Méthode non autorisée");
+}
 
-    // CV
-    if (isset($_FILES["cv"]) && $_FILES["cv"]["error"][0] == UPLOAD_ERR_OK) {
-        $cv_tmp = $_FILES["cv"]["tmp_name"][0];
-        $cv_name = $_FILES["cv"]["name"][0];
-        $cv_type = $_FILES["cv"]["type"][0];
-        $cv_data = chunk_split(base64_encode(file_get_contents($cv_tmp)));
-        $body .= "--$boundary\r\n";
-        $body .= "Content-Type: $cv_type; name=\"$cv_name\"\r\n";
-        $body .= "Content-Disposition: attachment; filename=\"$cv_name\"\r\n";
-        $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $body .= $cv_data . "\r\n";
-    }
+// Récupérer et préparer les données du formulaire
+$data = [
+    'name' => $_POST['name'] ?? '',
+    'firstname' => $_POST['firstname'] ?? '',
+    'tel' => $_POST['tel'] ?? '',
+    'mail' => $_POST['mail'] ?? '',
+    'object' => $_POST['object'] ?? '',
+    'category' => $_POST['category'] ?? '',
+    'message' => $_POST['message'] ?? '',
+    'terms' => isset($_POST['terms']) ? $_POST['terms'] : false,
+];
 
-    // Lettre de motivation
-    if (isset($_FILES["motivation"]) && $_FILES["motivation"]["error"][0] == UPLOAD_ERR_OK) {
-        $mot_tmp = $_FILES["motivation"]["tmp_name"][0];
-        $mot_name = $_FILES["motivation"]["name"][0];
-        $mot_type = $_FILES["motivation"]["type"][0];
-        $mot_data = chunk_split(base64_encode(file_get_contents($mot_tmp)));
-        $body .= "--$boundary\r\n";
-        $body .= "Content-Type: $mot_type; name=\"$mot_name\"\r\n";
-        $body .= "Content-Disposition: attachment; filename=\"$mot_name\"\r\n";
-        $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $body .= $mot_data . "\r\n";
-    }
+// Vérifier que les conditions d'utilisation sont acceptées
+if (!$data['terms']) {
+    $_SESSION['error'] = "Vous devez accepter la politique de confidentialité";
+    header("Location: ../pages/carriere.html");
+    exit;
+}
 
-    $body .= "--$boundary--";
+// Créer l'instance du mailer
+$mailer = new CarriereMailer();
 
-    if (mail($to, $subject, $body, $headers)) {
-        header("Location: ../pages/carriere.html");
-        exit;
-    } else {
-        echo "Erreur lors de l'envoi du mail. Contactez-nous directement à l'adresse : contact@cvca-energies.fr";
-    }
+// Envoyer le mail
+if ($mailer->send($data)) {
+    // Succès
+    $_SESSION['success'] = "Votre candidature a été envoyée avec succès. Merci de votre intérêt !";
+    header("Location: ../pages/carriere.html");
+    exit;
+} else {
+    // Erreur
+    $errors = $mailer->getErrors();
+    $_SESSION['error'] = "Erreur lors de l'envoi de votre candidature : " . implode(", ", $errors);
+    header("Location: ../pages/carriere.html");
+    exit;
 }
 ?>
